@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluate Your Idea — WorthBuild</title>
+<link rel="stylesheet" href="styles.css?v=6">
+<style>
+.evaluate-page{min-height:calc(100vh - 70px);background:linear-gradient(135deg,#061425,#092337);padding:55px 0}
+.evaluate-wrap{max-width:760px;text-align:center}
+.evaluate-hero h1{font-size:44px;line-height:1.05;margin:18px 0}
+.evaluate-hero h1 span{color:#38e5b0}
+.evaluate-hero>p{color:#cbd5df;line-height:1.7;max-width:600px;margin:0 auto 30px}
+.evaluation-form{text-align:left;background:#0a1e32;border:1px solid #25496b;border-radius:16px;padding:25px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.evaluation-form label{display:block;color:#e7eef5;font-size:13px;font-weight:700;margin-bottom:18px}
+.evaluation-form input,.evaluation-form select{display:block;width:100%;height:48px;margin-top:8px;border:1px solid #35536f;border-radius:8px;background:#071827;color:#fff;padding:0 14px;font:inherit;outline:none}
+.evaluation-form input:focus,.evaluation-form select:focus{border-color:#38e5b0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.evaluate-submit{width:100%;height:52px;border:0;border-radius:8px;background:#38e5b0;color:#061425;font-weight:800;font-size:14px;cursor:pointer}
+.evaluate-submit span{font-size:20px;margin-left:8px}
+.demo-note{text-align:center;color:#8495a8;font-size:11px;margin:14px 0 0}
+.score-result{margin-top:25px;padding:25px;display:flex;align-items:center;gap:25px;text-align:left;background:#0a1e32;border:1px solid #38e5b0;border-radius:16px}
+.score-circle{width:120px;height:120px;min-width:120px;border:9px solid #38e5b0;border-right-color:#177b78;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#38e5b0;font-size:34px;font-weight:800}
+.score-circle small{font-size:12px;color:#9aabba;margin-top:25px}
+.score-label{font-size:10px;color:#38e5b0;font-weight:800;letter-spacing:1px}
+.score-result h2{font-size:20px;margin:7px 0}
+.score-result p{font-size:12px;color:#bdc9d6;line-height:1.6;margin:0}
+.back-link{display:inline-block;margin-top:25px;color:#9aabba;font-size:12px}
+@media(max-width:560px){
+.evaluate-page{padding:40px 0}
+.evaluate-hero h1{font-size:36px}
+.evaluation-form{padding:18px}
+.form-grid{grid-template-columns:1fr}
+.score-result{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="wrap nav">
+<a href="index.html" class="logo">
+<span class="logo-bars"><i></i><i></i><i></i><i></i></span>
+<span><b>WorthBuild</b><small>From Idea to Profit</small></span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a class="active" href="evaluate.html">Evaluate</a>
+<a href="index.html#about">Build</a>
+<a href="index.html#about">About</a>
+</nav>
+<div class="nav-right">
+<a class="login" href="#">Login</a>
+<a class="start" href="evaluate.html">Get Started</a>
+</div>
+</div>
+</header>
+
+<main class="evaluate-page">
+<div class="wrap evaluate-wrap">
+
+<div class="pill">BUSINESS DECISION INTELLIGENCE</div>
+
+<div class="evaluate-hero">
+<h1>Is Your Idea<br><span>Worth the Money?</span></h1>
+<p>Tell us about your project and we'll create your first WorthScore.</p>
+</div>
+
+<form id="evaluationForm" class="evaluation-form">
+
+<label>
+What is your business idea?
+<input id="idea" required placeholder="e.g. Coffee shop, e-commerce store">
+</label>
+
+<div class="form-grid">
+<label>
+Country
+<input id="country" required placeholder="e.g. Egypt">
+</label>
+
+<label>
+City
+<input id="city" required placeholder="e.g. Cairo">
+</label>
+</div>
+
+<div class="form-grid">
+<label>
+Estimated budget
+<select id="budget" required>
+<option value="">Choose a range</option>
+<option value="low">Under $10,000</option>
+<option value="mid">$10,000 – $50,000</option>
+<option value="high">$50,000 – $100,000</option>
+<option value="enterprise">$100,000+</option>
+</select>
+</label>
+
+<label>
+Business type
+<select id="type" required>
+<option value="">Choose a type</option>
+<option>Retail</option>
+<option>Food & Beverage</option>
+<option>Services</option>
+<option>E-commerce</option>
+<option>Manufacturing</option>
+<option>Technology</option>
+<option>Other</option>
+</select>
+</label>
+</div>
+
+<button class="evaluate-submit" type="submit">
+Calculate My WorthScore <span>→</span>
+</button>
+
+<p class="demo-note">
+Demo scoring for now — real market evidence will be connected in the next stage.
+</p>
+
+</form>
+
+<section id="scoreResult" class="score-result" hidden>
+<div class="score-circle">
+<span id="scoreNumber">--</span>
+<small>/100</small>
+</div>
+
+<div>
+<div class="score-label">YOUR WORTHSCORE</div>
+<h2 id="scoreTitle"></h2>
+<p id="scoreText"></p>
+</div>
+</section>
+
+<a class="back-link" href="index.html">← Back to WorthBuild</a>
+
+</div>
+</main>
+
+<script>
+document.getElementById("evaluationForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+const idea=document.getElementById("idea").value.trim();
+const country=document.getElementById("country").value.trim();
+const city=document.getElementById("city").value.trim();
+const budget=document.getElementById("budget").value;
+const type=document.getElementById("type").value;
+
+if(!idea||!country||!city||!budget||!type)return;
+
+let score=70;
+
+if(budget==="low")score+=5;
+if(budget==="mid")score+=8;
+if(budget==="high")score+=10;
+if(budget==="enterprise")score+=7;
+
+if(type==="Services")score+=6;
+if(type==="E-commerce")score+=5;
+if(type==="Technology")score+=4;
+if(type==="Food & Beverage")score+=2;
+
+score=Math.min(score,92);
+
+document.getElementById("scoreNumber").textContent=score;
+
+document.getElementById("scoreTitle").textContent=
+score>=85 ? "Strong potential — worth deeper analysis." :
+score>=75 ? "Promising idea — more evidence is needed." :
+"Needs more validation before investing.";
+
+document.getElementById("scoreText").textContent=
+`Your ${type} idea in ${city}, ${country} currently receives a preliminary score of ${score}/100. This is a demo score, not a prediction of profit or a guarantee of success.`;
+
+const result=document.getElementById("scoreResult");
+result.hidden=false;
+result.scrollIntoView({behavior:"smooth",block:"center"});
+});
+</script>
+
+</body>
+</html>
