@@ -1,20 +1,5 @@
-# WorthBuild — iPhone Fix / Final Design MVP
+# WorthBuild — Reference Design
 
-This package is a corrected, mobile-first front-end update for the selected WorthBuild visual direction.
+This version follows the selected WorthBuild reference design and is responsive for desktop and iPhone.
 
-## Important
-- Demo interface only.
-- Scores and examples are illustrative.
-- No guaranteed profits.
-- No real payment processing is connected yet.
-- The page is designed to work cleanly on iPhone and desktop.
-- CSS and JS include version query strings (`?v=3`) to reduce stale-cache issues on GitHub Pages.
-
-## Files
-- `index.html`
-- `styles.css`
-- `app.js`
-- `README.md`
-
-## GitHub Pages
-Keep all four files in the repository root and deploy from `main` / `/(root)`.
+Demo only: no verified financial data, payments, or profit guarantees are connected yet.
