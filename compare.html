@@ -1,146 +1,87 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compare 120 Projects — IdeaWorth</title>
-<link rel="stylesheet" href="styles.css?v=19">
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compare U.S. Businesses — IdeaWorth</title>
+<meta name="description" content="Compare IdeaWorth's 120 U.S.-focused business opportunities by score, category and system price.">
+<link rel="stylesheet" href="styles.css?v=25">
 <style>
-.compare-hero{padding:72px 0 48px;background:linear-gradient(120deg,#071827,#071526 55%,#092337);border-bottom:1px solid rgba(255,255,255,.08)}
-.compare-hero .hero-copy{max-width:900px;margin:auto;text-align:center}
-.compare-hero h1{font-size:52px}
-.compare-hero h1 span{color:#39e7af}
-.compare-hero p{max-width:720px;margin:18px auto 0!important;color:#aeb9c6}
-.compare-shell{padding:38px 0 100px}
-.compare-toolbar{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:12px;margin-bottom:22px}
-.compare-toolbar input,.compare-toolbar select{width:100%;min-height:48px}
-.compare-count{display:flex;align-items:center;justify-content:center;padding:0 16px;border:1px solid rgba(57,231,175,.18);border-radius:10px;color:#39e7af;background:#0a1c2e;font-size:12px;font-weight:800;white-space:nowrap}
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.category-section{grid-column:1/-1;margin-top:34px}.category-section:first-child{margin-top:0}.category-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:0 2px 14px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:14px}.category-head h2{margin:0;font-size:22px}.category-head span{color:#39e7af;font-size:11px;font-weight:800}.category-head small{color:#718294;font-size:11px}.category-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.compare-card{position:relative;padding:22px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(155deg,#0b1d30,#071827);transition:.2s}
-.compare-card:hover{transform:translateY(-3px);border-color:rgba(57,231,175,.24)}
-.compare-card.selected{border-color:#39e7af;box-shadow:0 0 0 1px rgba(57,231,175,.18),0 20px 55px rgba(0,0,0,.2)}
-.compare-check{position:absolute;right:18px;top:18px;width:22px;height:22px;accent-color:#39e7af}
-.compare-num{font-size:10px;color:#65788b;letter-spacing:1px}
-.compare-card h3{font-size:19px;line-height:1.25;margin:13px 35px 7px 0}
-.compare-meta{color:#8d9aaa;font-size:11px}
-.compare-score{display:flex;align-items:end;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}
-.compare-score strong{font-size:28px;color:#39e7af}
-.compare-score small{color:#7f90a1}
-.compare-price{font-size:12px;color:#9ba8b5}
-.compare-price b{font-size:17px;color:#f3f8fb}
-.compare-actions{display:flex;gap:8px;margin-top:16px}
-.compare-actions a,.compare-actions button{flex:1;min-height:42px;border-radius:8px;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.compare-actions a{background:#39e7af;color:#061425}
-.compare-actions button{border:1px solid #385675;background:transparent;color:#eaf0f6;cursor:pointer}
-.compare-panel{position:sticky;bottom:14px;z-index:20;margin-top:28px;padding:18px 20px;border:1px solid rgba(57,231,175,.25);border-radius:18px;background:rgba(7,24,39,.96);backdrop-filter:blur(14px);box-shadow:0 20px 70px rgba(0,0,0,.3)}
-.compare-panel-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}
-.compare-panel-head strong{font-size:14px}.compare-panel-head span{font-size:11px;color:#8f9bab}
-.selected-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.selected-item{padding:12px;border:1px solid rgba(255,255,255,.07);border-radius:12px;background:#0a1c2e}
-.selected-item b{display:block;font-size:12px}.selected-item small{color:#7f90a1}
-.compare-table{width:100%;border-collapse:collapse;margin-top:18px;display:none}
-.compare-table th,.compare-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.06);text-align:left;font-size:11px}
-.compare-table th{color:#7f90a1;font-weight:700}
-.empty-state{text-align:center;padding:45px 20px;color:#8190a0;border:1px dashed rgba(255,255,255,.1);border-radius:18px;display:none}
-@media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.category-cards{grid-template-columns:1fr 1fr}.compare-toolbar{grid-template-columns:1fr 1fr}.compare-count{min-height:48px}.selected-list{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.compare-hero{padding:48px 0 35px}.compare-hero h1{font-size:38px}.compare-shell{padding-top:20px}.compare-toolbar{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}.category-cards{grid-template-columns:1fr}.category-head{align-items:flex-start;flex-direction:column;gap:6px}.compare-card{padding:20px}.selected-list{grid-template-columns:1fr}.compare-panel{bottom:8px;padding:15px;overflow:auto}.compare-table{font-size:10px;display:block;overflow-x:auto;white-space:nowrap}}
-</style>
-</head>
+.compare-hero{padding:65px 6% 40px;background:radial-gradient(circle at 85% 15%,rgba(57,231,175,.08),transparent 35%),#071827}
+.compare-shell{max-width:1160px;margin:auto}
+.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px;margin:24px 0}
+.filters input,.filters select{min-height:48px}
+.compare-count{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:25px 0 18px}
+.compare-count h2{margin:0;font-size:28px}
+.compare-count p{margin:5px 0 0;color:#8f9bab;font-size:12px}
+.category-section{margin:35px 0}
+.category-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
+.category-head h2{margin:0;font-size:24px}
+.category-head small,.category-head span{color:#758596;font-size:10px}
+.category-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.compare-card{padding:21px;border:1px solid rgba(255,255,255,.08);border-radius:17px;background:linear-gradient(150deg,#0a1c2e,#071827);transition:.2s}
+.compare-card.selected{border-color:rgba(57,231,175,.6);box-shadow:0 0 0 1px rgba(57,231,175,.08)}
+.compare-card:hover{transform:translateY(-3px)}
+.compare-card .num{font-size:9px;letter-spacing:1px;color:#39e7af}
+.compare-card h3{font-size:18px;line-height:1.25;margin:11px 0 6px}
+.compare-card .sub{font-size:11px;color:#8f9bab;min-height:34px;line-height:1.5}
+.scoreline{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.07)}
+.scoreline small{display:block;color:#728396;font-size:9px;text-transform:uppercase}
+.scoreline strong{display:block;margin-top:4px}
+.card-actions{display:flex;gap:8px;margin-top:15px}
+.card-actions a,.card-actions button{flex:1;min-height:40px}
+.card-actions button{border:1px solid #385675;background:#061425;color:#eef5fa;border-radius:8px;font-weight:800;cursor:pointer}
+.card-actions button.active{border-color:#39e7af;color:#39e7af}
+.panel{margin:45px 0;padding:26px;border:1px solid rgba(57,231,175,.18);border-radius:20px;background:#081a2b}
+.panel-head{display:flex;justify-content:space-between;gap:20px;align-items:end}
+.panel-head h2{margin:6px 0 0;font-size:25px}
+.table-wrap{overflow:auto;margin-top:18px}
+.compare-table{width:100%;border-collapse:collapse;min-width:680px}
+.compare-table th,.compare-table td{padding:13px;border-bottom:1px solid rgba(255,255,255,.07);text-align:left;font-size:12px}
+.compare-table th{color:#7d8da0;font-size:9px;text-transform:uppercase;letter-spacing:.7px}
+.empty{display:none;text-align:center;padding:60px;color:#8f9bab}
+@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}.category-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.compare-hero{padding:52px 18px 35px}.compare-shell{padding:0 14px}.filters{grid-template-columns:1fr}.category-cards{grid-template-columns:1fr}.category-head{align-items:flex-start;flex-direction:column;gap:6px}}
+</style></head>
 <body>
 <header>
 <a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a>
-<nav><a href="index.html">Home</a><a href="start.html">Get Started</a><a href="explore.html">Explore</a><a href="build.html">Build</a></nav>
+<nav><a href="index.html">Home</a><a href="start.html">Get Started</a><a href="explore.html">Explore</a><a href="compare.html">Compare</a><a href="build.html">Build</a></nav>
 <a class="header-cta" href="start.html">Get Started</a>
 </header>
 <main>
-<section class="compare-hero">
-<div class="hero-copy">
-<div class="eyebrow">COMPARE 120 PROJECTS</div>
-<h1>Choose with <span>evidence.</span></h1>
-<p>Explore the complete IdeaWorth catalogue, organized by business category. Compare opportunities side by side using the same decision framework, then open any project for its full business system.</p>
-</div>
-</section>
-<section class="compare-shell">
-<div class="wrap">
-<div class="compare-toolbar">
-<input id="search" type="search" placeholder="Search projects...">
-<select id="category"><option value="">All categories</option><option>Automotive</option><option>B2B</option><option>Creative</option><option>Digital</option><option>E-commerce</option><option>Education</option><option>Energy</option><option>Food & Beverage</option><option>Health & Fitness</option><option>Home & Property</option><option>Logistics</option><option>Manufacturing</option><option>Real Estate</option><option>Retail</option><option>Services</option><option>Specialized</option><option>Tourism & Hospitality</option></select>
-<select id="score"><option value="">Any WorthScore</option><option value="85">85+ — Strong</option><option value="82">82+ — Promising</option><option value="80">80+ — Explore</option></select>
-<div class="compare-count" id="count">120 projects</div>
-</div>
-<div id="grid" class="compare-grid"></div>
-<div id="empty" class="empty-state">No projects match these filters.</div>
-<div class="compare-panel">
-<div class="compare-panel-head"><div><strong>Your comparison</strong> <span id="selectedCount">0 / 6 selected</span></div><span>Select up to six projects from any category</span></div>
-<div id="selected" class="selected-list"></div>
-<table id="comparisonTable" class="compare-table"></table>
-</div>
-<p style="text-align:center;margin:28px 0 0;color:#718294;font-size:11px">IDEAWORTH DECISION STANDARD — Every opportunity is organized around market opportunity, capital requirements, economics, competition and execution.</p>
-</div>
-</section>
-</main>
-<footer><div style="text-align:center;padding:35px 20px;color:#8f9bab"><span class="logo"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></span><br>Decide Before You Build.</div></footer>
+<section class="compare-hero"><div class="compare-shell">
+<div class="eyebrow">COMPARE U.S. OPPORTUNITIES</div>
+<h1 style="font-size:clamp(38px,6vw,62px);margin:12px 0;max-width:800px;">Choose with <span>clarity.</span></h1>
+<p style="max-width:760px;color:#a7b4c1;line-height:1.8;">Compare business models side by side, then open the complete project blueprint before you commit to a direction.</p>
+</div></section>
+<section style="padding:35px 0 90px;"><div class="compare-shell">
+<div class="filters"><input id="search" placeholder="Search projects..." aria-label="Search projects"><select id="category" aria-label="Filter category"><option value="">All categories</option></select><select id="score" aria-label="Minimum score"><option value="0">Any score</option><option value="88">88+ priority</option><option value="90">90+ strong</option><option value="92">92+ elite</option></select></div>
+<div class="compare-count"><div><div class="eyebrow">IDEAWORTH DECISION STANDARD</div><h2 id="count">120 projects</h2><p>U.S.-focused opportunities · select up to 6.</p></div><a class="secondary-btn" href="explore.html">Explore All →</a></div>
+<div id="grid"></div><div id="empty" class="empty">No projects match these filters.</div>
+<div class="panel"><div class="panel-head"><div><div class="eyebrow">SHORTLIST</div><h2 id="selectedTitle">0 / 6 selected</h2></div><button id="clear" class="secondary-btn" type="button">Clear</button></div><div id="table"></div></div>
+</div></section></main>
+<script src="projects.js"></script>
 <script>
-const projects=[{"name":"Dental Practice Support Services","cat":"Health & Fitness","price":400,"score":82,"capital":"Premium capital"},{"name":"Physiotherapy & Recovery Center","cat":"Health & Fitness","price":400,"score":83,"capital":"Premium capital"},{"name":"Specialty Pharmacy Delivery","cat":"Health & Fitness","price":200,"score":80,"capital":"Premium capital"},{"name":"Coworking Space","cat":"Real Estate","price":200,"score":81,"capital":"High capital"},{"name":"Commercial Property Management","cat":"Real Estate","price":800,"score":85,"capital":"Growth capital"},{"name":"Water Delivery Fleet","cat":"Logistics","price":400,"score":82,"capital":"Premium capital"},{"name":"Industrial Equipment Rental","cat":"B2B","price":200,"score":79,"capital":"High capital"},{"name":"Print & Signage Workshop","cat":"Manufacturing","price":400,"score":83,"capital":"Premium capital"},{"name":"Commercial Kitchen Rental","cat":"Food & Beverage","price":200,"score":80,"capital":"High capital"},{"name":"Beauty Salon","cat":"Health & Fitness","price":400,"score":84,"capital":"Growth capital"},{"name":"Solar Panel Maintenance Service","cat":"Energy","price":800,"score":86,"capital":"Low / variable"},{"name":"Commercial Solar Farm","cat":"Energy","price":100,"score":78,"capital":"High capital"},{"name":"Fleet Management Service","cat":"Logistics","price":400,"score":84,"capital":"Growth capital"},{"name":"Last-Mile Delivery Hub","cat":"Logistics","price":200,"score":81,"capital":"Premium capital"},{"name":"Hostel & Budget Stay","cat":"Tourism & Hospitality","price":200,"score":80,"capital":"High capital"},{"name":"Specialty Tour Operator","cat":"Tourism & Hospitality","price":400,"score":84,"capital":"Growth capital"},{"name":"Wholesale Food Distributor","cat":"B2B","price":400,"score":82,"capital":"Premium capital"},{"name":"Industrial Safety Supplies","cat":"B2B","price":400,"score":83,"capital":"Premium capital"},{"name":"Custom Furniture Studio","cat":"Manufacturing","price":200,"score":81,"capital":"Premium capital"},{"name":"Packaging Manufacturing","cat":"Manufacturing","price":200,"score":79,"capital":"High capital"},{"name":"Home Painting Service","cat":"Home & Property","price":400,"score":84,"capital":"Low / variable"},{"name":"Moving & Relocation Service","cat":"Services","price":400,"score":82,"capital":"Growth capital"},{"name":"Mobile Tire Service","cat":"Automotive","price":400,"score":84,"capital":"Growth capital"},{"name":"Auto Parts E-commerce","cat":"Automotive","price":400,"score":82,"capital":"Growth capital"},{"name":"Motorcycle Service Center","cat":"Automotive","price":200,"score":81,"capital":"Premium capital"},{"name":"Car Rental Micro-Fleet","cat":"Automotive","price":100,"score":78,"capital":"High capital"},{"name":"Short-Term Rental Management","cat":"Real Estate","price":800,"score":86,"capital":"Low / variable"},{"name":"Property Maintenance Company","cat":"Real Estate","price":800,"score":85,"capital":"Growth capital"},{"name":"Self-Storage Facility","cat":"Real Estate","price":200,"score":80,"capital":"High capital"},{"name":"Laundry Self-Service Center","cat":"Services","price":200,"score":81,"capital":"Premium capital"},{"name":"Water Purification & Delivery","cat":"Specialized","price":400,"score":82,"capital":"Premium capital"},{"name":"Solar Installation Company","cat":"Energy","price":800,"score":85,"capital":"Premium capital"},{"name":"EV Charging Installation","cat":"Energy","price":400,"score":83,"capital":"Premium capital"},{"name":"Cold Storage Facility","cat":"Logistics","price":200,"score":79,"capital":"High capital"},{"name":"Local Delivery Fleet","cat":"Logistics","price":400,"score":82,"capital":"Premium capital"},{"name":"Micro Fulfillment Center","cat":"Logistics","price":200,"score":80,"capital":"High capital"},{"name":"Boutique Hotel","cat":"Tourism & Hospitality","price":100,"score":78,"capital":"High capital"},{"name":"Serviced Apartments","cat":"Tourism & Hospitality","price":200,"score":81,"capital":"High capital"},{"name":"Tour & Excursion Agency","cat":"Tourism & Hospitality","price":400,"score":84,"capital":"Low / variable"},{"name":"Travel Concierge Service","cat":"Tourism & Hospitality","price":800,"score":85,"capital":"Low / variable"},{"name":"Specialty Grocery Store","cat":"Food & Beverage","price":200,"score":81,"capital":"Premium capital"},{"name":"Frozen Food Distribution","cat":"Food & Beverage","price":200,"score":80,"capital":"Premium capital"},{"name":"Commercial Bakery Production","cat":"Food & Beverage","price":400,"score":82,"capital":"High capital"},{"name":"B2B Office Supplies Company","cat":"B2B","price":400,"score":84,"capital":"Growth capital"},{"name":"Packaging Supply Company","cat":"B2B","price":400,"score":83,"capital":"Premium capital"},{"name":"Recruitment Agency","cat":"B2B","price":800,"score":86,"capital":"Low / variable"},{"name":"Corporate Training Company","cat":"B2B","price":800,"score":85,"capital":"Low / variable"},{"name":"Private Label Cosmetics Brand","cat":"E-commerce","price":400,"score":82,"capital":"Premium capital"},{"name":"Furniture Workshop","cat":"Manufacturing","price":200,"score":80,"capital":"Premium capital"},{"name":"Small Manufacturing Workshop","cat":"Manufacturing","price":200,"score":79,"capital":"High capital"},{"name":"Coffee Shop","cat":"Food & Beverage","price":400,"score":82,"capital":"Research"},{"name":"Specialty Coffee Cart","cat":"Food & Beverage","price":400,"score":84,"capital":"Research"},{"name":"Bakery & Pastry Shop","cat":"Food & Beverage","price":200,"score":81,"capital":"Research"},{"name":"Cloud Kitchen","cat":"Food & Beverage","price":400,"score":83,"capital":"Research"},{"name":"Food Truck","cat":"Food & Beverage","price":200,"score":80,"capital":"Research"},{"name":"Meal Prep Subscription","cat":"Food & Beverage","price":800,"score":85,"capital":"Research"},{"name":"Specialty Food Brand","cat":"Food & Beverage","price":400,"score":82,"capital":"Research"},{"name":"Juice & Smoothie Bar","cat":"Food & Beverage","price":200,"score":79,"capital":"Research"},{"name":"Dessert & Ice Cream Shop","cat":"Food & Beverage","price":200,"score":80,"capital":"Research"},{"name":"Catering Business","cat":"Food & Beverage","price":400,"score":84,"capital":"Research"},{"name":"Mobile Car Wash","cat":"Services","price":800,"score":86,"capital":"Research"},{"name":"Car Detailing Studio","cat":"Services","price":400,"score":84,"capital":"Research"},{"name":"Residential Cleaning Service","cat":"Services","price":800,"score":87,"capital":"Research"},{"name":"Commercial Cleaning Company","cat":"Services","price":800,"score":85,"capital":"Research"},{"name":"Home Maintenance Service","cat":"Services","price":400,"score":83,"capital":"Research"},{"name":"Lawn & Garden Care","cat":"Services","price":400,"score":82,"capital":"Research"},{"name":"Laundry & Dry Cleaning Pickup","cat":"Services","price":200,"score":81,"capital":"Research"},{"name":"Pet Grooming","cat":"Services","price":400,"score":83,"capital":"Research"},{"name":"Pet Care & Boarding","cat":"Services","price":200,"score":80,"capital":"Research"},{"name":"Senior Companion Service","cat":"Services","price":100,"score":78,"capital":"Research"},{"name":"Digital Marketing Agency","cat":"Digital","price":1600,"score":88,"capital":"Low / variable"},{"name":"Social Media Content Studio","cat":"Digital","price":800,"score":86,"capital":"Low / variable"},{"name":"UGC Creator Studio","cat":"Digital","price":800,"score":85,"capital":"Low / variable"},{"name":"Web Design Agency","cat":"Digital","price":800,"score":87,"capital":"Low / variable"},{"name":"B2B Lead Generation Agency","cat":"Digital","price":1600,"score":89,"capital":"Low / variable"},{"name":"Virtual Assistant Agency","cat":"Digital","price":400,"score":84,"capital":"Low / variable"},{"name":"Bookkeeping Service","cat":"Digital","price":800,"score":86,"capital":"Low / variable"},{"name":"Online Tutoring Academy","cat":"Education","price":800,"score":85,"capital":"Low / variable"},{"name":"Skills Training Platform","cat":"Education","price":800,"score":87,"capital":"Low / variable"},{"name":"Children's Enrichment Center","cat":"Education","price":200,"score":80,"capital":"Research"},{"name":"Niche E-commerce Store","cat":"E-commerce","price":400,"score":84,"capital":"Research"},{"name":"Beauty Products Store","cat":"E-commerce","price":400,"score":83,"capital":"Research"},{"name":"Pet Products Store","cat":"E-commerce","price":400,"score":82,"capital":"Research"},{"name":"Home Organization Store","cat":"E-commerce","price":200,"score":81,"capital":"Research"},{"name":"Personalized Gifts Brand","cat":"E-commerce","price":400,"score":83,"capital":"Research"},{"name":"Subscription Box Brand","cat":"E-commerce","price":200,"score":80,"capital":"Research"},{"name":"Secondhand Fashion Store","cat":"Retail","price":400,"score":82,"capital":"Research"},{"name":"Mobile Accessories Store","cat":"Retail","price":200,"score":81,"capital":"Research"},{"name":"Beauty & Skincare Boutique","cat":"Retail","price":400,"score":82,"capital":"Research"},{"name":"Convenience Mini Market","cat":"Retail","price":100,"score":78,"capital":"Research"},{"name":"Fitness Coaching Studio","cat":"Health & Fitness","price":800,"score":85,"capital":"Research"},{"name":"Boutique Fitness Studio","cat":"Health & Fitness","price":200,"score":80,"capital":"Research"},{"name":"Yoga & Wellness Studio","cat":"Health & Fitness","price":400,"score":82,"capital":"Research"},{"name":"Meal & Nutrition Coaching","cat":"Health & Fitness","price":400,"score":84,"capital":"Low / variable"},{"name":"Photography Studio","cat":"Creative","price":400,"score":82,"capital":"Research"},{"name":"Video Production Studio","cat":"Creative","price":400,"score":84,"capital":"Research"},{"name":"Event Planning Agency","cat":"Creative","price":400,"score":83,"capital":"Low / variable"},{"name":"3D Printing Service","cat":"Specialized","price":200,"score":81,"capital":"Research"},{"name":"IT Support & Managed Services","cat":"Specialized","price":1600,"score":88,"capital":"Low / variable"},{"name":"Smart Home Installation","cat":"Specialized","price":400,"score":83,"capital":"Research"},{"name":"B2B Procurement Platform","cat":"B2B","price":400,"score":88,"capital":"Growth capital"},{"name":"Commercial HVAC Service","cat":"Services","price":800,"score":87,"capital":"Premium capital"},{"name":"Industrial Maintenance Company","cat":"B2B","price":800,"score":86,"capital":"Premium capital"},{"name":"Accounting & CFO Services","cat":"Services","price":400,"score":88,"capital":"Growth capital"},{"name":"Specialty Logistics Brokerage","cat":"Logistics","price":400,"score":87,"capital":"Growth capital"},{"name":"Warehouse & Distribution Center","cat":"Logistics","price":1600,"score":85,"capital":"High capital"},{"name":"Cold Chain Delivery Service","cat":"Logistics","price":800,"score":86,"capital":"Premium capital"},{"name":"Water Treatment Plant","cat":"Energy","price":1600,"score":84,"capital":"High capital"},{"name":"Commercial EV Charging Network","cat":"Energy","price":1600,"score":86,"capital":"High capital"},{"name":"Solar Equipment Distribution","cat":"Energy","price":800,"score":85,"capital":"Premium capital"},{"name":"Private Label Food Manufacturing","cat":"Manufacturing","price":800,"score":84,"capital":"Premium capital"},{"name":"Commercial Laundry Plant","cat":"Manufacturing","price":1600,"score":85,"capital":"High capital"},{"name":"Metal Fabrication Workshop","cat":"Manufacturing","price":800,"score":84,"capital":"Premium capital"},{"name":"Modular Construction Company","cat":"Manufacturing","price":1600,"score":86,"capital":"High capital"},{"name":"Medical Equipment Distribution","cat":"B2B","price":800,"score":87,"capital":"Premium capital"},{"name":"Specialty Childcare Center","cat":"Services","price":800,"score":84,"capital":"Premium capital"},{"name":"Senior Home Care Agency","cat":"Services","price":400,"score":86,"capital":"Growth capital"},{"name":"Managed Property Services","cat":"Real Estate","price":400,"score":85,"capital":"Growth capital"},{"name":"Student Housing Management","cat":"Real Estate","price":800,"score":84,"capital":"Premium capital"},{"name":"Commercial Cleaning Franchise","cat":"Services","price":400,"score":87,"capital":"Growth capital"}];
-const selected=new Set();
-const grid=document.getElementById("grid"),empty=document.getElementById("empty"),count=document.getElementById("count"),selectedBox=document.getElementById("selected"),selectedCount=document.getElementById("selectedCount"),table=document.getElementById("comparisonTable");
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const projects=window.IDEAWORTH_PROJECTS||{}, names=Object.keys(projects), selected=new Set();
+const cat=document.getElementById("category");
+[...new Set(names.map(n=>projects[n].cat))].sort().forEach(x=>cat.insertAdjacentHTML("beforeend","<option>"+x+"</option>"));
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
+function toggle(n){if(selected.has(n))selected.delete(n);else{if(selected.size>=6){alert("You can compare up to 6 projects at a time.");return}selected.add(n)}render();renderSelected();}
 function render(){
-  var q=document.getElementById("search").value.trim().toLowerCase();
-  var cat=document.getElementById("category").value;
-  var min=parseInt(document.getElementById("score").value||"0",10);
-  var list=projects.filter(function(p){
-    return (!q||p.name.toLowerCase().indexOf(q)!==-1)&&(!cat||p.cat===cat)&&p.score>=min;
-  });
-  count.textContent=list.length+" projects";
-  empty.style.display=list.length?"none":"block";
-  grid.innerHTML="";
-  var groups={};
-  list.forEach(function(p){
-    if(!groups[p.cat])groups[p.cat]=[];
-    groups[p.cat].push(p);
-  });
-  Object.keys(groups).sort().forEach(function(catName){
-    var section=document.createElement("section");
-    section.className="category-section";
-    var head=document.createElement("div");
-    head.className="category-head";
-    head.innerHTML="<div><h2>"+esc(catName)+"</h2><small>"+groups[catName].length+" opportunities in this category</small></div><span>EXPLORE CATEGORY</span>";
-    var cards=document.createElement("div");
-    cards.className="category-cards";
-    groups[catName].forEach(function(p){
-      var card=document.createElement("article");
-      card.className="compare-card"+(selected.has(p.name)?" selected":"");
-      card.innerHTML="<div class='compare-num'>"+String(projects.indexOf(p)+1).padStart(3,"0")+" · "+esc(p.cat)+"</div><h3>"+esc(p.name)+"</h3><div class='compare-meta'>"+esc(p.capital)+" · Complete system package</div><div class='compare-score'><div><small>WorthScore</small><strong>"+p.score+"</strong><small>/100</small></div><div class='compare-price'><span>System price</span><br><b>$"+p.price.toLocaleString()+"</b></div></div><div class='compare-actions'><a href='project.html?project="+encodeURIComponent(p.name)+"'>View Project →</a><button type='button'>"+(selected.has(p.name)?"Remove":"Compare")+"</button></div>";
-      var btn=card.querySelector("button");
-      btn.addEventListener("click",function(){toggle(p.name);});
-      cards.appendChild(card);
-    });
-    section.appendChild(head);
-    section.appendChild(cards);
-    grid.appendChild(section);
-  });
-  renderSelected();
-}
-function toggle(name){
- if(selected.has(name)) selected.delete(name);
- else if(selected.size<6) selected.add(name);
- else {alert("You can compare up to 6 projects at a time.");return}
- render();
+ const q=document.getElementById("search").value.trim().toLowerCase(), c=cat.value, min=+document.getElementById("score").value;
+ const list=names.filter(n=>{const p=projects[n];return(!q||n.toLowerCase().includes(q))&&(!c||p.cat===c)&&p.score>=min;});
+ document.getElementById("count").textContent=list.length+" projects";
+ document.getElementById("empty").style.display=list.length?"none":"block";
+ const groups={};list.forEach(n=>(groups[projects[n].cat]??=[]).push(n));
+ document.getElementById("grid").innerHTML=Object.keys(groups).sort().map(catName=>'<section class="category-section"><div class="category-head"><div><h2>'+esc(catName)+'</h2><small>'+groups[catName].length+' opportunities</small></div><span>U.S. MARKET</span></div><div class="category-cards">'+groups[catName].map(n=>{const p=projects[n];return '<article class="compare-card '+(selected.has(n)?"selected":"")+'"><div class="num">'+String(names.indexOf(n)+1).padStart(3,"0")+' · '+esc(p.cat)+'</div><h3>'+esc(n)+'</h3><div class="sub">'+esc(p.intro)+'</div><div class="scoreline"><div><small>IdeaWorth Score</small><strong>'+p.score+'/100</strong></div><div><small>System price</small><strong style="color:#39e7af">$'+p.price.toLocaleString()+'</strong></div></div><div class="card-actions"><a class="primary-btn" href="project.html?project='+encodeURIComponent(n)+'">View</a><button type="button" class="'+(selected.has(n)?"active":"")+'">'+(selected.has(n)?"Remove":"Compare")+'</button></div></article>'}).join("")+'</div></section>').join("");
+ document.querySelectorAll(".compare-card button").forEach((b,i)=>{const cards=[...document.querySelectorAll(".compare-card")];b.onclick=()=>toggle(cards[i].querySelector("h3").textContent)});
 }
 function renderSelected(){
- const arr=projects.filter(p=>selected.has(p.name));
- selectedCount.textContent=arr.length+" / 6 selected";
- selectedBox.innerHTML=arr.length?arr.map(p=>'<div class="selected-item"><b>'+esc(p.name)+'</b><small>'+p.score+'/100 · $'+p.price.toLocaleString()+'</small></div>').join(""):'<div style="grid-column:1/-1;color:#718294;font-size:12px;padding:8px">Choose two to six projects to see the comparison below.</div>';
- if(arr.length<2){table.style.display="none";table.innerHTML="";return}
- table.style.display="table";
- table.innerHTML='<thead><tr><th>Metric</th>'+arr.map(p=>'<th>'+esc(p.name)+'</th>').join("")+'</tr></thead><tbody>'+
- [['Category',p=>p.cat],['WorthScore',p=>p.score+'/100'],['System price',p=>'$'+p.price.toLocaleString()],['Capital class',p=>p.capital],['Decision',p=>'<a style="color:#39e7af;font-weight:800" href="project.html?project='+encodeURIComponent(p.name)+'">Open project →</a>']].map(([label,fn])=>'<tr><th>'+label+'</th>'+arr.map(p=>'<td>'+fn(p)+'</td>').join("")+'</tr>').join("")+'</tbody>';
+ document.getElementById("selectedTitle").textContent=selected.size+" / 6 selected";
+ const arr=[...selected];
+ if(arr.length<2){document.getElementById("table").innerHTML='<p style="color:#8190a0;font-size:13px;margin:18px 0 0;">Select at least two projects to compare them side by side.</p>';return}
+ document.getElementById("table").innerHTML='<div class="table-wrap"><table class="compare-table"><thead><tr><th>Project</th><th>Category</th><th>Score</th><th>System price</th><th>Capital class</th></tr></thead><tbody>'+arr.map(n=>{const p=projects[n];return '<tr><td><strong>'+esc(n)+'</strong></td><td>'+esc(p.cat)+'</td><td>'+p.score+'/100</td><td>$'+p.price.toLocaleString()+'</td><td>'+esc(p.capital)+'</td></tr>'}).join("")+'</tbody></table></div>';
 }
-document.getElementById("search").addEventListener("input",render);
-document.getElementById("category").addEventListener("change",render);
-document.getElementById("score").addEventListener("change",render);
-render();
-</script>
-</body>
-</html>
+["search","category","score"].forEach(id=>document.getElementById(id).addEventListener("input",render));
+document.getElementById("clear").onclick=()=>{selected.clear();render();renderSelected()};
+render();renderSelected();
+</script></body></html>
