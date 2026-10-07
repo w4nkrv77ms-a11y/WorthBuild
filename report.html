@@ -1,16 +1,187 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Project Report — WorthBuild</title><link rel="stylesheet" href="styles.css?v=6"><style>
-:root{--bg:#061425;--panel:#0a1e32;--line:#25496b;--text:#f7fbff;--muted:#bdc9d6;--green:#38e5b0;--blue:#78a4ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,calc(100% - 28px));margin:auto}.topbar{height:70px;border-bottom:1px solid rgba(255,255,255,.12);background:#071729}.nav{height:70px;display:flex;align-items:center;gap:20px}.logo{display:flex;align-items:center;gap:9px}.logo-bars{height:31px;display:flex;align-items:flex-end;gap:3px}.logo-bars i{display:block;width:6px;border-radius:4px;background:#31e6b1}.logo-bars i:nth-child(1){height:15px}.logo-bars i:nth-child(2){height:24px}.logo-bars i:nth-child(3){height:31px}.logo-bars i:nth-child(4){height:21px;background:#58a8ff}.logo b{display:block;font-size:19px}.logo small{display:block;font-size:9px;color:#b3bfcd}.navlinks{display:flex;gap:24px;margin-left:auto;font-size:13px;color:#d4dce6}.navbtn{padding:10px 14px;border:1px solid #496078;border-radius:8px}.start{padding:11px 15px;background:var(--green);color:#061425;border-radius:8px;font-weight:800}.page{padding:70px 0}.panel{max-width:760px;margin:auto;background:linear-gradient(145deg,#0d2940,#071a2c);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 25px 50px rgba(0,0,0,.25)}h1{font-size:42px;margin:0 0 12px}h1 span{color:var(--green)}h2{margin-top:0}p{color:var(--muted);line-height:1.7}.field{margin:16px 0}.field label{display:block;margin-bottom:7px;font-weight:700}.field input,.field select,.field textarea{width:100%;padding:13px;border-radius:8px;border:1px solid #385675;background:#061425;color:#fff;font:inherit}.submit{width:100%;margin-top:10px;padding:14px;border:0;border-radius:8px;background:var(--green);color:#061425;font-weight:800;font-size:16px}.back{display:inline-block;margin-top:18px;color:#9fc2df}.demo{font-size:12px;color:#8495a8;margin-top:14px;text-align:center}@media(max-width:600px){.navlinks{display:none}.nav{justify-content:space-between}.page{padding:42px 0}h1{font-size:34px}.panel{padding:20px}}
-</style></head><body>
-<header class="topbar"><div class="wrap nav"><a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>WorthBuild</b><small>From Idea to Profit</small></span></a><nav class="navlinks"><a href="index.html">Home</a><a href="evaluate.html">Evaluate</a><a href="build.html">Build</a><a href="index.html#about">About</a></nav><div><a class="navbtn" href="login.html">Login</a></div></div></header>
-<main class="page"><div class="wrap">
-<div class="panel">
-  <h1>Project <span>Report</span></h1>
-  <p>This is a demo report screen. It intentionally does not present invented market figures or guaranteed profits.</p>
-  <h2>WorthScore</h2>
-  <p style="font-size:42px;color:#38e5b0;font-weight:800">82 / 100</p>
-  <p>Demo score only. Verified market evidence will be connected in the production version.</p>
-  <a class="submit" style="display:block;text-align:center" href="build.html">Continue to Build System</a>
-  <a class="back" href="evaluate.html">← Back to Evaluation</a>
-</div></div></main>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WorthScore — WorthBuild</title>
+  <link rel="stylesheet" href="styles.css?v=11">
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">WorthBuild</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="start.html">Get Started</a>
+    <a href="explore.html">Explore</a>
+    <a href="build.html">Build</a>
+  </nav>
+
+  <a class="header-cta" href="start.html">Get Started</a>
+</header>
+
+<main>
+
+<section class="hero" style="min-height:auto;padding-bottom:45px;">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">WORTHSCORE · DEMO</div>
+
+    <h1>
+      Is your idea
+      <span>worth the money?</span>
+    </h1>
+
+    <p>
+      A structured view of the opportunity based on market,
+      investment, demand and execution factors.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section style="padding:20px 6% 90px;">
+
+  <div style="
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    background:rgba(255,255,255,.025);
+    text-align:center;
+  ">
+
+    <div class="eyebrow">DEMO SCORE</div>
+
+    <div style="
+      font-size:86px;
+      font-weight:800;
+      line-height:1;
+      margin:20px 0;
+    ">
+      82<span style="font-size:30px;">/100</span>
+    </div>
+
+    <h2>Promising — but verify before investing.</h2>
+
+    <p style="
+      max-width:650px;
+      margin:15px auto 0;
+      color:#9ba6b5;
+    ">
+      This is a demonstration score. The final WorthScore will use
+      verified market evidence, location data, costs, competition
+      and other project-specific factors.
+    </p>
+
+  </div>
+
+
+  <div class="features" style="margin-top:30px;">
+
+    <article class="feature-card">
+      <div class="eyebrow">01 · MARKET</div>
+      <h2>Demand</h2>
+      <p>
+        Measures the potential customer demand for the selected
+        business and location.
+      </p>
+      <strong>Demo: Strong</strong>
+    </article>
+
+
+    <article class="feature-card">
+      <div class="eyebrow">02 · MONEY</div>
+      <h2>Investment Fit</h2>
+      <p>
+        Looks at whether the required investment matches the
+        available budget.
+      </p>
+      <strong>Demo: Good</strong>
+    </article>
+
+
+    <article class="feature-card">
+      <div class="eyebrow">03 · COMPETITION</div>
+      <h2>Competition</h2>
+      <p>
+        Considers existing businesses and the difficulty of
+        competing in the target market.
+      </p>
+      <strong>Demo: Moderate</strong>
+    </article>
+
+
+    <article class="feature-card">
+      <div class="eyebrow">04 · EXECUTION</div>
+      <h2>Execution Risk</h2>
+      <p>
+        Considers operational complexity, resources and the
+        difficulty of launching the project.
+      </p>
+      <strong>Demo: Moderate</strong>
+    </article>
+
+  </div>
+
+
+  <div style="
+    text-align:center;
+    margin-top:45px;
+  ">
+
+    <a class="primary-btn" href="build.html">
+      See the Build System →
+    </a>
+
+    <a
+      class="secondary-btn"
+      href="explore.html"
+      style="margin-left:10px;"
+    >
+      Explore Other Projects
+    </a>
+
+    <p style="
+      margin-top:20px;
+      color:#8f9bab;
+      font-size:13px;
+    ">
+      DEMO ONLY — No real profit or investment guarantee is being made.
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <a class="logo" href="index.html">WorthBuild</a>
+      <p>Smarter decisions. Bigger dreams.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="start.html">Get Started</a>
+      <a href="explore.html">Explore</a>
+      <a href="login.html">Login</a>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
