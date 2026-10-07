@@ -22,6 +22,7 @@
 <nav><a href="index.html">Home</a><a href="start.html">Get Started</a><a href="explore.html">Explore</a><a href="build.html">Build</a></nav>
 <a class="header-cta" href="explore.html">Explore Businesses</a>
 </header>
+<script src="projects.js"></script>
 
 <main class="dashboard"><script>try{document.documentElement.dataset.activeProject=localStorage.getItem("iwActiveProject")||""}catch(e){document.documentElement.dataset.activeProject=""}</script>
 <div class="dash-wrap">
@@ -70,21 +71,24 @@
 </div>
 <script>
 (function(){
-var projects={"Coffee Shop":82,"Specialty Coffee Cart":80,"Bakery & Pastry Shop":81,"Cloud Kitchen":82,"Food Truck":83};
-var name="";
+const projects=window.IDEAWORTH_PROJECTS||{};
+let name="";
 try{name=localStorage.getItem("iwActiveProject")||""}catch(e){}
-var title=document.getElementById("activeProjectName"),meta=document.getElementById("activeProjectMeta"),score=document.getElementById("activeScore"),bar=document.getElementById("activeProgress"),prog=document.getElementById("activeProgressText"),room=document.getElementById("openRoom");
-if(name){
-title.textContent=name;
-score.textContent=projects[name]||"—";
-meta.textContent="Active business opportunity · Project Workspace";
-bar.style.width="24%";prog.textContent="24% complete";
-room.href="room.html?project="+encodeURIComponent(name);room.textContent="Open Project Room →";
+const title=document.getElementById("activeProjectName"),meta=document.getElementById("activeProjectMeta"),score=document.getElementById("activeScore"),bar=document.getElementById("activeProgress"),prog=document.getElementById("activeProgressText"),room=document.getElementById("openRoom");
+const snapshot=document.querySelector(".metric-list");
+if(name&&projects[name]){
+ const p=projects[name];
+ title.textContent=name;
+ score.textContent=p.score;
+ meta.textContent=p.cat+" · U.S. Project Workspace · $"+p.price.toLocaleString()+" system";
+ bar.style.width="24%";prog.textContent="24% complete";
+ room.href="room.html?project="+encodeURIComponent(name);room.textContent="Open Project Room →";
+ if(snapshot){
+  const a=Math.min(99,p.score+4),b=Math.min(98,p.score-1),d=Math.max(70,p.score-5);
+  snapshot.innerHTML='<div class="metric"><span>Demand strength</span><b>'+a+' / 100</b><div class="mini-track"><i style="width:'+a+'%"></i></div></div><div class="metric"><span>Economics</span><b>'+b+' / 100</b><div class="mini-track"><i style="width:'+b+'%"></i></div></div><div class="metric"><span>Execution fit</span><b>'+d+' / 100</b><div class="mini-track"><i style="width:'+d+'%"></i></div></div>';
+ }
 }else{
-title.textContent="Choose your project";
-meta.textContent="Explore an opportunity to make it your active project.";
-score.textContent="—";bar.style.width="0%";prog.textContent="Ready to begin";
-room.href="explore.html";room.textContent="Choose a Project →";
+ title.textContent="Choose your project";meta.textContent="Explore an opportunity to make it your active project.";score.textContent="—";bar.style.width="0%";prog.textContent="Ready to begin";room.href="explore.html";room.textContent="Choose a Project →";
 }
 })();
 </script></main>
