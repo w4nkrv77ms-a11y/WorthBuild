@@ -85,3 +85,26 @@ footer .footer-links{display:flex;gap:28px}
  header:not(.topbar){min-height:64px}
  .feature-card{padding:22px}
 }
+
+/* Final responsive safeguards */
+img,video{max-width:100%;height:auto}
+button,a{touch-action:manipulation}
+@media(max-width:700px){
+  header:not(.topbar){min-height:64px;gap:10px}
+  header:not(.topbar) .logo{font-size:17px}
+  header:not(.topbar) .header-cta{font-size:11px;padding:9px 12px}
+  header:not(.topbar) nav{display:none}
+  .hero-copy{padding-left:0;padding-right:0}
+  main>section[style*="padding:20px 6% 100px"]{padding-left:14px!important;padding-right:14px!important}
+}
+@media(max-width:620px){
+  .feature-card h2{font-size:22px}
+  .primary-btn,.secondary-btn{width:100%;min-height:46px}
+  footer .footer-links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:600px){
+  form input,form select,form textarea{font-size:16px}
+}
+@media(max-width:700px){
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+}
