@@ -49,7 +49,7 @@
 <select id="score" aria-label="Minimum score"><option value="0">Any score</option><option value="88">88+ priority</option><option value="90">90+ strong</option><option value="92">92+ elite</option></select>
 <select id="price" aria-label="Project package price"><option value="0">Any package price</option><option value="100">$100</option><option value="200">$200</option><option value="400">$400</option><option value="800">$800</option><option value="1600">$1,600</option></select>
 </div>
-<div class="catalog-count"><div><div class="eyebrow">120 OPPORTUNITIES</div><h2 id="count">120 projects</h2><p>U.S.-focused catalogue · compare or open any project for the full system.</p></div><a class="secondary-btn" href="compare.html">Compare Projects →</a></div>
+<div class="catalog-count"><div><div class="eyebrow">120 OPPORTUNITIES</div><h2 id="count">120 projects</h2><p>U.S.-focused catalogue · strongest opportunities appear first, with score, capital class and system price visible before you decide.</p></div><a class="secondary-btn" href="compare.html">Compare Projects →</a></div>
 <div id="grid" class="project-grid"></div><div id="empty" class="empty">No projects match these filters.</div>
 </div></section>
 </main>
@@ -62,7 +62,7 @@ const cat=document.getElementById("category");
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
 function render(){
  const q=document.getElementById("search").value.trim().toLowerCase(), c=cat.value, min=+document.getElementById("score").value, price=+document.getElementById("price").value;
- const list=names.filter(n=>{const p=projects[n];return(!q||n.toLowerCase().includes(q))&&(!c||p.cat===c)&&p.score>=min&&(!price||p.price===price);});
+ const list=names.filter(n=>{const p=projects[n];return(!q||n.toLowerCase().includes(q))&&(!c||p.cat===c)&&p.score>=min&&(!price||p.price===price);}).sort((a,b)=>projects[b].score-projects[a].score||projects[b].price-projects[a].price||a.localeCompare(b));
  document.getElementById("count").textContent=list.length+" projects";
  document.getElementById("empty").style.display=list.length?"none":"block";
  document.getElementById("grid").innerHTML=list.map((n,i)=>{const p=projects[n];return '<article class="project-card"><div class="tag">'+String(i+1).padStart(3,"0")+' · '+esc(p.cat)+'</div><h3>'+esc(n)+'</h3><p>'+esc(p.intro)+'</p><div class="project-meta"><div><small>IdeaWorth Score</small><strong>'+p.score+'/100</strong></div><div><small>System price</small><strong style="color:#39e7af">$'+p.price.toLocaleString()+'</strong></div></div><div class="project-actions"><a class="primary-btn" href="project.html?project='+encodeURIComponent(n)+'">View Project →</a><a class="secondary-btn" href="compare.html?project='+encodeURIComponent(n)+'">Compare</a></div></article>'}).join("");
