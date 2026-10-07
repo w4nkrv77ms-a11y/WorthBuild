@@ -58,7 +58,7 @@
       style="flex:1;min-width:220px;"
     >
 
-    <select style="min-width:180px;">
+    <select id="categoryFilter" style="min-width:180px;" aria-label="Filter by category">
       <option>All Categories</option>
       <option>Food & Beverage</option>
       <option>Services</option>
@@ -66,7 +66,7 @@
       <option>E-commerce</option>
     </select>
 
-    <select style="min-width:160px;">
+    <select id="budgetFilter" style="min-width:160px;" aria-label="Filter by budget">
       <option>Any Budget</option>
       <option>Under $10K</option>
       <option>$10K – $50K</option>
@@ -86,7 +86,7 @@
 
   <div class="features">
 
-    <article class="feature-card">
+    <article class="feature-card business-card" data-name="coffee shop" data-category="Food & Beverage" data-budget="under10">
 
       <div class="eyebrow">DEMO · FOOD & BEVERAGE</div>
 
@@ -109,7 +109,7 @@
     </article>
 
 
-    <article class="feature-card">
+    <article class="feature-card business-card" data-name="car wash" data-category="Services" data-budget="under10">
 
       <div class="eyebrow">DEMO · SERVICES</div>
 
@@ -132,7 +132,7 @@
     </article>
 
 
-    <article class="feature-card">
+    <article class="feature-card business-card" data-name="online store" data-category="E-commerce" data-budget="under10">
 
       <div class="eyebrow">DEMO · E-COMMERCE</div>
 
