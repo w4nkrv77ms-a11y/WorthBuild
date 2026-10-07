@@ -102,3 +102,6 @@ html{scroll-behavior:smooth}body{overflow-x:hidden}a,button,input,select,textare
   .steps{grid-template-columns:1fr}
   .steps article{min-height:auto}
 }
+
+/* Trust / AI differentiation */
+.trust-engine{padding:92px 0;background:#071827;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}.trust-engine-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.trust-engine h2{font-size:40px;line-height:1.08;margin:10px 0 16px;color:#f7fbff}.trust-engine h2 span{color:#39e7af}.trust-engine p{color:#9eabb9;line-height:1.85;max-width:620px}.trust-engine-card{display:grid;gap:10px}.trust-engine-card>div{padding:18px 20px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#0a1c2e}.trust-engine-card b{color:#39e7af;font-size:10px;margin-right:12px}.trust-engine-card strong{color:#f3f8fc;font-size:14px}.trust-engine-card small{display:block;color:#8998a8;line-height:1.55;margin:7px 0 0 34px}@media(max-width:800px){.trust-engine{padding:60px 0}.trust-engine-grid{grid-template-columns:1fr;gap:30px}.trust-engine h2{font-size:31px}}
