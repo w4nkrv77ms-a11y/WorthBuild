@@ -173,7 +173,7 @@ document.getElementById("buyBtn").href="checkout.html?project="+encodeURICompone
 document.getElementById("buildBtn").href="build.html?project="+encodeURIComponent(name);
 
 const stat=(label,value)=>'<div class="feature-card" style="padding:22px;"><div class="eyebrow">'+label+'</div><strong style="font-size:24px;display:block;margin-top:7px;">'+value+'</strong></div>';
-document.getElementById("projectStats").innerHTML=stat("PACKAGE PRICE","$"+p.price)+stat("DEMO SCORE",p.score+"/100")+stat("STARTUP CAPITAL",p.capital)+stat("MARGIN","Evidence first");
+document.getElementById("projectStats").innerHTML=stat("COMPLETE SYSTEM","$"+p.price)+stat("DEMO SCORE",p.score+"/100")+stat("STARTUP CAPITAL",p.capital)+stat("MARGIN","Evidence first");
 
 const items=["Business model & positioning","Market + competitor research framework","Location & customer analysis","Startup capital & financial model","Equipment / tools + procurement checklist","Supplier & sourcing plan","Licensing & setup checklist","Operations SOPs & daily workflow","Brand, pricing & offer structure","Marketing + customer acquisition plan","Sales scripts + follow-up system","Launch roadmap + first-customer plan","Break-even & profit roadmap","Risk register + what could go wrong","Project Room + editable execution checklist"];
 document.getElementById("packageGrid").innerHTML=items.map((x,i)=>'<div style="padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><strong>'+String(i+1).padStart(2,"0")+'</strong><p style="color:#8f9bab;font-size:14px;margin:8px 0 0;">'+x+'</p></div>').join("");
