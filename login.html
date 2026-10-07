@@ -1,204 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Dashboard — IdeaWorth</title>
-  <link rel="stylesheet" href="styles.css?v=22">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — IdeaWorth</title>
+<link rel="stylesheet" href="styles.css?v=24">
+<style>
+.dashboard{padding:18px 6% 90px}.dash-wrap{max-width:1120px;margin:auto}
+.dash-top{display:flex;justify-content:space-between;align-items:end;gap:25px;padding:35px 0 28px}.dash-top h1{font-size:42px;line-height:1.05;margin:8px 0}.dash-top h1 span{color:#39e7af}.dash-top p{color:#94a3b2;max-width:650px;line-height:1.7;margin:0}.dash-label{color:#39e7af;font-size:11px;font-weight:800;letter-spacing:1.4px}.dash-action{display:flex;gap:10px;flex-wrap:wrap}
+.project-hero{padding:30px;border:1px solid rgba(57,231,175,.2);border-radius:24px;background:linear-gradient(135deg,#0b2434,#071827);box-shadow:0 22px 70px rgba(0,0,0,.18)}.project-head{display:flex;justify-content:space-between;gap:25px;align-items:start}.project-head h2{font-size:30px;margin:7px 0}.project-head p{color:#8fa0b0;margin:0}.score-box{text-align:right}.score-box strong{font-size:40px;color:#39e7af;line-height:1}.score-box small{display:block;color:#718294;margin-top:5px}.progress-track{height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin:25px 0 9px}.progress-track i{display:block;width:24%;height:100%;background:linear-gradient(90deg,#39e7af,#58a8ff);border-radius:99px}.progress-meta{display:flex;justify-content:space-between;color:#7f8d9c;font-size:11px}
+.stage-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}.stage{padding:15px;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:rgba(0,0,0,.12)}.stage b{display:block;font-size:10px;color:#39e7af}.stage strong{display:block;margin:8px 0 4px;font-size:13px}.stage small{color:#758697;font-size:10px}.stage.active{border-color:rgba(57,231,175,.3)}.stage.locked{opacity:.58}
+.dash-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}.dash-card{padding:26px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:linear-gradient(150deg,#0a1c2e,#071827)}.dash-card h2{margin:7px 0 10px;font-size:24px}.dash-card p{color:#8e9cac;line-height:1.7;font-size:13px}.metric-list{display:grid;gap:11px;margin-top:20px}.metric{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px}.metric span{color:#aab5c1;font-size:12px}.metric b{color:#f2f7fb;font-size:13px}.mini-track{grid-column:1/-1;height:5px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}.mini-track i{display:block;height:100%;background:#39e7af}
+.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.action-card{padding:22px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:#081a2a}.action-card h3{margin:7px 0 8px;font-size:19px}.action-card p{color:#8493a3;font-size:12px;line-height:1.6;min-height:40px}.action-card a{margin-top:15px;width:100%}
+@media(max-width:850px){.stage-grid{grid-template-columns:repeat(3,1fr)}.dash-grid{grid-template-columns:1fr}.action-grid{grid-template-columns:1fr 1fr}.dash-top{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.dashboard{padding:10px 14px 65px}.dash-top{padding:25px 0 20px}.dash-top h1{font-size:34px}.project-head{flex-direction:column}.score-box{text-align:left}.stage-grid{grid-template-columns:1fr 1fr}.action-grid{grid-template-columns:1fr}.dash-action,.dash-action a{width:100%}.dash-action a{min-height:46px}.project-hero,.dash-card{padding:22px}}
+</style>
 </head>
-
 <body>
-
 <header>
-  <a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="start.html">Get Started</a>
-    <a href="explore.html">Explore</a>
-    <a href="build.html">Build</a>
-  </nav>
-
-  <a class="header-cta" href="explore.html">Explore Businesses</a>
+<a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a>
+<nav><a href="index.html">Home</a><a href="start.html">Get Started</a><a href="explore.html">Explore</a><a href="build.html">Build</a></nav>
+<a class="header-cta" href="explore.html">Explore Businesses</a>
 </header>
 
-<main>
-
-<section class="hero" style="min-height:auto;padding-bottom:50px;">
-
-  <div class="hero-copy">
-
-    <div class="eyebrow">ACCOUNT · DEMO</div>
-
-    <h1>
-      Welcome to your
-      <span>IdeaWorth dashboard.</span>
-    </h1>
-
-    <p>
-      Keep your evaluations, projects and business-building journey
-      organized in one place.
-    </p>
-
-  </div>
-
+<main class="dashboard">
+<div class="dash-wrap">
+<section class="dash-top">
+<div><div class="dash-label">YOUR DECISION CENTER</div><h1>Build with <span>clarity.</span></h1><p>Keep your business decisions, project progress, WorthScore and build system connected in one place.</p></div>
+<div class="dash-action"><a class="secondary-btn" href="compare.html">Compare Projects</a><a class="primary-btn" href="explore.html">Find an Opportunity</a></div>
 </section>
 
-
-<section style="padding:20px 6% 100px;">
-
-  <div class="features">
-
-    <article class="feature-card">
-
-      <div class="eyebrow">ACTIVE PROJECT</div>
-
-      <h2>Coffee Shop</h2>
-
-      <p>
-        Your current business project is ready to continue.
-      </p>
-
-      <div style="
-        margin:20px 0;
-        display:flex;
-        justify-content:space-between;
-      ">
-        <span style="color:#8f9bab;">Progress</span>
-        <strong>24%</strong>
-      </div>
-
-      <a class="primary-btn" href="room.html">
-        Open Project Room →
-      </a>
-
-    </article>
-
-
-    <article class="feature-card">
-
-      <div class="eyebrow">EVALUATIONS</div>
-
-      <h2>Your WorthScores</h2>
-
-      <p>
-        Review your previous business evaluations and understand
-        the factors behind each score.
-      </p>
-
-      <a class="primary-btn" href="report.html">
-        View Evaluation →
-      </a>
-
-    </article>
-
-
-    <article class="feature-card">
-
-      <div class="eyebrow">BUILD ACCESS</div>
-
-      <h2>Build System</h2>
-
-      <p>
-        Continue from evaluation to planning, setup and launch.
-      </p>
-
-      <a class="primary-btn" href="build.html">
-        Open Build System →
-      </a>
-
-    </article>
-
-
-    <article class="feature-card">
-
-      <div class="eyebrow">DISCOVER</div>
-
-      <h2>Explore Businesses</h2>
-
-      <p>
-        Discover other business opportunities and compare
-        projects before making a decision.
-      </p>
-
-      <a class="secondary-btn" href="explore.html">
-        Explore Projects →
-      </a>
-
-    </article>
-
-  </div>
-
-
-  <section style="
-    margin-top:40px;
-    padding:35px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
-    background:rgba(255,255,255,.025);
-  ">
-
-    <div class="eyebrow">YOUR IDEAWORTH JOURNEY</div>
-
-    <h2 style="font-size:32px;margin:8px 0 12px;">
-      Evaluate. Decide. Build.
-    </h2>
-
-    <p style="
-      max-width:720px;
-      color:#9ba6b5;
-    ">
-      IdeaWorth is designed to keep the entire journey connected —
-      from discovering a business opportunity to evaluating it and
-      building the system needed to move forward.
-    </p>
-
-    <div style="
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:25px;
-    ">
-
-      <a class="primary-btn" href="room.html">
-        Continue My Project →
-      </a>
-
-      <a class="secondary-btn" href="start.html">
-        Start Another Project
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <p style="
-    text-align:center;
-    margin-top:35px;
-    color:#8f9bab;
-    font-size:13px;
-  ">
-    DEMO ACCOUNT — Real authentication, saved projects and personal
-    data will be connected before launch.
-  </p>
-
+<section class="project-hero">
+<div class="project-head">
+<div><div class="dash-label">ACTIVE PROJECT · 01</div><h2>Coffee Shop</h2><p>Food & Beverage · Project Workspace</p></div>
+<div class="score-box"><strong>82</strong><small>WORTHSCORE / 100</small></div>
+</div>
+<div class="progress-track"><i></i></div>
+<div class="progress-meta"><span>Project progress</span><b>24% complete</b></div>
+<div class="stage-grid">
+<div class="stage active"><b>01</b><strong>Evaluate</strong><small>Complete</small></div>
+<div class="stage active"><b>02</b><strong>Decide</strong><small>Complete</small></div>
+<div class="stage active"><b>03</b><strong>Plan</strong><small>In progress</small></div>
+<div class="stage locked"><b>04</b><strong>Launch</strong><small>Next stage</small></div>
+<div class="stage locked"><b>05</b><strong>Grow</strong><small>Roadmap</small></div>
+</div>
+<div style="margin-top:22px"><a class="primary-btn" href="room.html">Open Project Room →</a></div>
 </section>
 
+<section class="dash-grid">
+<article class="dash-card"><div class="dash-label">DECISION SNAPSHOT</div><h2>Why this project?</h2><p>Your current opportunity is organized around the factors that matter before capital is committed.</p>
+<div class="metric-list">
+<div class="metric"><span>Demand</span><b>88 / 100</b><div class="mini-track"><i style="width:88%"></i></div></div>
+<div class="metric"><span>Economics</span><b>81 / 100</b><div class="mini-track"><i style="width:81%"></i></div></div>
+<div class="metric"><span>Competition</span><b>76 / 100</b><div class="mini-track"><i style="width:76%"></i></div></div>
+</div></article>
+<article class="dash-card"><div class="dash-label">NEXT MOVE</div><h2>Continue the system</h2><p>Your next priority is to move from the decision into the practical business setup and execution plan.</p><a class="primary-btn" href="build.html">Continue Build System →</a></article>
+</section>
+
+<section class="action-grid">
+<article class="action-card"><div class="dash-label">EVALUATIONS</div><h3>WorthScore Reports</h3><p>Review the decision logic behind your project evaluation.</p><a class="secondary-btn" href="report.html">View Evaluation →</a></article>
+<article class="action-card"><div class="dash-label">PROJECT ROOM</div><h3>Execution Workspace</h3><p>Keep tasks, planning and project progress together.</p><a class="secondary-btn" href="room.html">Open Workspace →</a></article>
+<article class="action-card"><div class="dash-label">DISCOVER</div><h3>More Opportunities</h3><p>Explore the full catalogue and compare another opportunity.</p><a class="secondary-btn" href="explore.html">Explore Businesses →</a></article>
+</section>
+
+<section class="dash-card" style="margin-top:16px">
+<div class="dash-label">IDEAWORTH JOURNEY</div><h2>From decision to execution.</h2><p>Evaluate the opportunity, choose the right project, build the system, launch with a plan and keep improving the economics as the business grows.</p>
+<div class="dash-action" style="margin-top:18px"><a class="primary-btn" href="room.html">Continue My Project →</a><a class="secondary-btn" href="start.html">Start Another Evaluation</a></div>
+</section>
+</div>
 </main>
 
-
-<footer>
-  <div style="
-    text-align:center;
-    padding:35px 20px;
-    color:#8f9bab;
-  ">
-    <span class="logo"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></span>
-    <br>
-    Decide Before You Build.
-  </div>
-</footer>
-
+<footer><div style="text-align:center;padding:35px 20px;color:#8f9bab"><span class="logo"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></span><br>Decide Before You Build.</div></footer>
 </body>
 </html>
