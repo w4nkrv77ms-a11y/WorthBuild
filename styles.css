@@ -108,3 +108,36 @@ button,a{touch-action:manipulation}
 @media(max-width:700px){
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 }
+
+/* Premium WorthBuild brand polish */
+.logo{position:relative;transition:transform .2s ease,opacity .2s ease}
+.logo:hover{transform:translateY(-1px);opacity:.96}
+.logo-bars{filter:drop-shadow(0 0 8px rgba(49,230,177,.16))}
+.logo-bars i{box-shadow:0 0 8px rgba(49,230,177,.10)}
+.logo b{letter-spacing:-.25px}
+.logo small{letter-spacing:.35px}
+.topbar .logo,.topbar .nav a,.topbar .login,.topbar .start{transition:all .2s ease}
+.topbar .nav a:hover,.topbar .login:hover{color:#fff}
+.topbar .start:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(56,229,176,.16)}
+header:not(.topbar) .logo{gap:9px}
+header:not(.topbar) .logo-bars{height:31px;display:flex;align-items:flex-end;gap:3px}
+header:not(.topbar) .logo-bars i{display:block;width:6px;border-radius:4px;background:#31e6b1}
+header:not(.topbar) .logo-bars i:nth-child(1){height:15px}
+header:not(.topbar) .logo-bars i:nth-child(2){height:24px}
+header:not(.topbar) .logo-bars i:nth-child(3){height:31px}
+header:not(.topbar) .logo-bars i:nth-child(4){height:21px;background:#58a8ff}
+header:not(.topbar) .logo b{display:block;font-size:19px}
+header:not(.topbar) .logo small{display:block;font-size:9px;color:#b3bfcd}
+footer .logo{display:inline-flex;align-items:center;gap:9px}
+footer .logo-bars{height:31px;display:flex;align-items:flex-end;gap:3px}
+footer .logo-bars i{display:block;width:6px;border-radius:4px;background:#31e6b1}
+footer .logo-bars i:nth-child(1){height:15px}
+footer .logo-bars i:nth-child(2){height:24px}
+footer .logo-bars i:nth-child(3){height:31px}
+footer .logo-bars i:nth-child(4){height:21px;background:#58a8ff}
+footer .logo b{display:block;font-size:19px}
+footer .logo small{display:block;font-size:9px;color:#b3bfcd}
+@media(max-width:600px){
+  header:not(.topbar) .logo b{font-size:17px}
+  header:not(.topbar) .logo small{font-size:8px}
+}
