@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://w4nkrv77ms-a11y.github.io/WorthBuild/sitemap.xml
