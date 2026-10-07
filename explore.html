@@ -1230,7 +1230,7 @@
   [search,category,budget].forEach(el=>el.addEventListener("input",filter));
   [category,budget].forEach(el=>el.addEventListener("change",filter));
   const params=new URLSearchParams(location.search);
-  const budgetMap={"Under $10,000":"under10","$10,000 – $50,000":"10to50","$50,000 – $100,000":"50to100","$100,000+":"100plus"};
+  const budgetMap={"Under $10,000":"under10","$10,000 – $50,000":"10to50","$50,000 – $100,000":"50to100","$100,000 – $250,000":"100plus","$250,000+":"100plus","$100,000+":"100plus"};
   if(budgetMap[params.get("budget")]) budget.value=budgetMap[params.get("budget")];
   filter();
 })();
