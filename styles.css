@@ -105,3 +105,24 @@ html{scroll-behavior:smooth}body{overflow-x:hidden}a,button,input,select,textare
 
 /* Trust / AI differentiation */
 .trust-engine{padding:92px 0;background:#071827;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}.trust-engine-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.trust-engine h2{font-size:40px;line-height:1.08;margin:10px 0 16px;color:#f7fbff}.trust-engine h2 span{color:#39e7af}.trust-engine p{color:#9eabb9;line-height:1.85;max-width:620px}.trust-engine-card{display:grid;gap:10px}.trust-engine-card>div{padding:18px 20px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#0a1c2e}.trust-engine-card b{color:#39e7af;font-size:10px;margin-right:12px}.trust-engine-card strong{color:#f3f8fc;font-size:14px}.trust-engine-card small{display:block;color:#8998a8;line-height:1.55;margin:7px 0 0 34px}@media(max-width:800px){.trust-engine{padding:60px 0}.trust-engine-grid{grid-template-columns:1fr;gap:30px}.trust-engine h2{font-size:31px}}
+
+/* Compare page — mobile-first table */
+.compare-table th,.compare-table td{vertical-align:middle}
+@media(max-width:700px){
+  .compare-table{min-width:0!important;width:100%!important;display:block}
+  .compare-table thead{display:none}
+  .compare-table tbody{display:grid;gap:12px}
+  .compare-table tr{display:block;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(150deg,#0a1c2e,#071827);overflow:hidden}
+  .compare-table td{display:grid;grid-template-columns:108px 1fr;gap:12px;align-items:center;padding:15px 16px!important;border-bottom:1px solid rgba(255,255,255,.06)!important;font-size:13px}
+  .compare-table td:last-child{border-bottom:0!important}
+  .compare-table td:before{color:#6f8295;font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+  .compare-table td:nth-child(1):before{content:"Business"}
+  .compare-table td:nth-child(2):before{content:"Category"}
+  .compare-table td:nth-child(3):before{content:"WorthScore"}
+  .compare-table td:nth-child(4):before{content:"Action"}
+  .compare-table .primary-btn{width:100%;min-height:44px;font-size:12px}
+  main>section[style*="padding:20px 6% 100px"]{padding-top:14px!important}
+}
+@media(max-width:380px){
+  .compare-table td{grid-template-columns:88px 1fr;font-size:12px}
+}
