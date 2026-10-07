@@ -86,12 +86,41 @@ const selected=new Set();
 const grid=document.getElementById("grid"),empty=document.getElementById("empty"),count=document.getElementById("count"),selectedBox=document.getElementById("selected"),selectedCount=document.getElementById("selectedCount"),table=document.getElementById("comparisonTable");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function render(){
- const q=document.getElementById("search").value.trim().toLowerCase(), cat=document.getElementById("category").value, min=+(document.getElementById("score").value||0);
- const list=projects.filter(p=>(!q||p.name.toLowerCase().includes(q))&&(!cat||p.cat===cat)&&p.score>=min);
- count.textContent=list.length+" projects";
- empty.style.display=list.length?"none":"block";
- const groups={}; list.forEach(function(p){groups[p.cat]=groups[p.cat]||[];groups[p.cat].push(p);}); const cats=Object.keys(groups).sort(); grid.innerHTML=cats.map(cat=>`<section class="category-section"><div class="category-head"><div><h2>${esc(cat)}</h2><small>${groups[cat].length} opportunities in this category</small></div><span>EXPLORE CATEGORY</span></div><div class="category-cards">${groups[cat].map((p,i)=>{const key=p.name,sel=selected.has(key);return '<article class="compare-card '+(sel?"selected":"")+'"><input class="compare-check" type="checkbox" '+(sel?"checked":"")+' aria-label="Select '+esc(key)+'" onchange="toggle('+JSON.stringify(key)+')"><div class="compare-num">'+String(projects.indexOf(p)+1).padStart(3,"0")+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class="compare-meta">'+esc(p.capital)+' · Complete system package</div><div class="compare-score"><div><small>WorthScore</small><strong>'+p.score+'</strong><small>/100</small></div><div class="compare-price"><span>System price</span><br><b>$'+p.price.toLocaleString()+"</b></div></div><div class="compare-actions"><a href="project.html?project='+encodeURIComponent(p.name)+'">View Project →</a><button type="button" onclick="toggle('+JSON.stringify(key)+')">'+(sel?"Remove":"Compare")+'</button></div></article>'}).join("")}</div></section>`).join("");
- renderSelected();
+  var q=document.getElementById("search").value.trim().toLowerCase();
+  var cat=document.getElementById("category").value;
+  var min=parseInt(document.getElementById("score").value||"0",10);
+  var list=projects.filter(function(p){
+    return (!q||p.name.toLowerCase().indexOf(q)!==-1)&&(!cat||p.cat===cat)&&p.score>=min;
+  });
+  count.textContent=list.length+" projects";
+  empty.style.display=list.length?"none":"block";
+  grid.innerHTML="";
+  var groups={};
+  list.forEach(function(p){
+    if(!groups[p.cat])groups[p.cat]=[];
+    groups[p.cat].push(p);
+  });
+  Object.keys(groups).sort().forEach(function(catName){
+    var section=document.createElement("section");
+    section.className="category-section";
+    var head=document.createElement("div");
+    head.className="category-head";
+    head.innerHTML="<div><h2>"+esc(catName)+"</h2><small>"+groups[catName].length+" opportunities in this category</small></div><span>EXPLORE CATEGORY</span>";
+    var cards=document.createElement("div");
+    cards.className="category-cards";
+    groups[catName].forEach(function(p){
+      var card=document.createElement("article");
+      card.className="compare-card"+(selected.has(p.name)?" selected":"");
+      card.innerHTML="<div class='compare-num'>"+String(projects.indexOf(p)+1).padStart(3,"0")+" · "+esc(p.cat)+"</div><h3>"+esc(p.name)+"</h3><div class='compare-meta'>"+esc(p.capital)+" · Complete system package</div><div class='compare-score'><div><small>WorthScore</small><strong>"+p.score+"</strong><small>/100</small></div><div class='compare-price'><span>System price</span><br><b>$"+p.price.toLocaleString()+"</b></div></div><div class='compare-actions'><a href='project.html?project="+encodeURIComponent(p.name)+"'>View Project →</a><button type='button'>"+(selected.has(p.name)?"Remove":"Compare")+"</button></div>";
+      var btn=card.querySelector("button");
+      btn.addEventListener("click",function(){toggle(p.name);});
+      cards.appendChild(card);
+    });
+    section.appendChild(head);
+    section.appendChild(cards);
+    grid.appendChild(section);
+  });
+  renderSelected();
 }
 function toggle(name){
  if(selected.has(name)) selected.delete(name);
