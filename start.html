@@ -3,9 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Choose how you want to start with WorthBuild.">
 <title>Get Started — WorthBuild</title>
 <link rel="stylesheet" href="styles.css?v=6">
+
+<style>
+.start-page{
+  min-height:calc(100vh - 78px);
+  padding:70px 0;
+  background:#061421;
+}
+
+.start-title{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 50px;
+}
+
+.start-title .pill{
+  display:inline-block;
+  color:#35e6a5;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.start-title h1{
+  margin:0 0 18px;
+  font-size:48px;
+  line-height:1.1;
+}
+
+.start-title h1 span{
+  color:#31e3a1;
+}
+
+.start-title p{
+  margin:0;
+  color:#91a4b5;
+  font-size:16px;
+}
+
+.start-options{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.start-card{
+  display:block;
+  padding:36px;
+  background:#0c2232;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  min-height:300px;
+  transition:.2s;
+}
+
+.start-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(53,230,165,.3);
+}
+
+.start-icon{
+  width:58px;
+  height:58px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  margin-bottom:22px;
+}
+
+.green-icon{
+  background:rgba(53,230,165,.12);
+  color:#35e6a5;
+}
+
+.blue-icon{
+  background:rgba(93,170,255,.12);
+  color:#5daaff;
+}
+
+.start-card h2{
+  margin:0 0 12px;
+  font-size:24px;
+}
+
+.start-card p{
+  margin:0 0 25px;
+  color:#8499aa;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.start-card span{
+  font-size:14px;
+  font-weight:800;
+  color:#35e6a5;
+}
+
+.start-card.blue span{
+  color:#5daaff;
+}
+
+.start-note{
+  text-align:center;
+  color:#63798a;
+  font-size:12px;
+  margin-top:28px;
+}
+
+@media(max-width:700px){
+  .start-page{
+    padding:50px 0 70px;
+  }
+
+  .start-title h1{
+    font-size:37px;
+  }
+
+  .start-title p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .start-options{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .start-card{
+    min-height:auto;
+    padding:28px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -31,6 +166,7 @@
     <div class="nav-right">
       <span class="globe">◎</span>
       <a class="login" href="login.html">Login</a>
+      <a class="start" href="start.html">Get Started</a>
     </div>
 
   </div>
@@ -38,133 +174,60 @@
 
 <main>
 
-<section class="hero" style="min-height:calc(100vh - 78px);">
+<section class="start-page">
 
-  <div class="hero-glow"></div>
+  <div class="wrap">
 
-  <div class="wrap" style="position:relative;z-index:2;width:min(1000px,92%);">
-
-    <div class="heading" style="margin-bottom:45px;">
+    <div class="start-title">
       <div class="pill">Start Your Journey</div>
 
-      <h1 style="font-size:48px;margin:0 0 15px;">
-        What brings you to <span style="color:#31e3a1;">WorthBuild?</span>
+      <h1>
+        What brings you to
+        <span>WorthBuild?</span>
       </h1>
 
-      <p style="max-width:650px;margin:auto;color:#91a4b5;font-size:16px;">
-        Choose the path that fits you. Whether you already have a business idea
-        or need help finding the right opportunity, we'll guide you from idea to profit.
+      <p>
+        Choose the path that fits you. We'll guide you from idea to profit.
       </p>
     </div>
 
-    <div style="
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:25px;
-      max-width:850px;
-      margin:auto;
-    ">
+    <div class="start-options">
 
-      <a href="match.html" style="
-        display:block;
-        padding:38px 32px;
-        background:#0c2232;
-        border:1px solid rgba(53,230,165,.18);
-        border-radius:16px;
-        box-shadow:0 20px 60px rgba(0,0,0,.25);
-        transition:.2s;
-      ">
+      <a href="match.html" class="start-card">
 
-        <div style="
-          width:58px;
-          height:58px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          border-radius:12px;
-          background:rgba(53,230,165,.12);
-          color:#35e6a5;
-          font-size:28px;
-          margin-bottom:22px;
-        ">⌕</div>
+        <div class="start-icon green-icon">⌕</div>
 
-        <h2 style="margin:0 0 10px;font-size:23px;">
-          Help Me Choose
-        </h2>
+        <h2>Help Me Choose</h2>
 
-        <p style="margin:0 0 25px;color:#8499aa;font-size:14px;">
+        <p>
           Tell us your budget, location, experience and goals.
-          We'll help you discover business opportunities that fit you.
+          We'll help you find business opportunities that fit you.
         </p>
 
-        <span style="
-          display:inline-flex;
-          align-items:center;
-          gap:8px;
-          color:#35e6a5;
-          font-weight:800;
-          font-size:14px;
-        ">
-          Find My Best Match →
-        </span>
+        <span>Find My Best Match →</span>
 
       </a>
 
-      <a href="explore.html" style="
-        display:block;
-        padding:38px 32px;
-        background:#0c2232;
-        border:1px solid rgba(93,170,255,.18);
-        border-radius:16px;
-        box-shadow:0 20px 60px rgba(0,0,0,.25);
-        transition:.2s;
-      ">
+      <a href="explore.html" class="start-card blue">
 
-        <div style="
-          width:58px;
-          height:58px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          border-radius:12px;
-          background:rgba(93,170,255,.12);
-          color:#5daaff;
-          font-size:28px;
-          margin-bottom:22px;
-        ">◈</div>
+        <div class="start-icon blue-icon">◈</div>
 
-        <h2 style="margin:0 0 10px;font-size:23px;">
-          Explore Businesses
-        </h2>
+        <h2>Explore Businesses</h2>
 
-        <p style="margin:0 0 25px;color:#8499aa;font-size:14px;">
-          Browse business opportunities yourself.
-          Search, compare and evaluate projects before you invest.
+        <p>
+          Browse business opportunities yourself. Search, compare
+          and evaluate projects before you invest.
         </p>
 
-        <span style="
-          display:inline-flex;
-          align-items:center;
-          gap:8px;
-          color:#5daaff;
-          font-weight:800;
-          font-size:14px;
-        ">
-          Explore Opportunities →
-        </span>
+        <span>Explore Opportunities →</span>
 
       </a>
 
     </div>
 
-    <p style="
-      text-align:center;
-      color:#63798a;
-      font-size:12px;
-      margin-top:30px;
-    ">
+    <div class="start-note">
       No account required to start exploring.
-    </p>
+    </div>
 
   </div>
 
