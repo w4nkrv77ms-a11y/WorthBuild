@@ -23,14 +23,6 @@ window.IDEAWORTH_PROJECTS = {
     "capital": "Premium capital",
     "margin": "Research"
   },
-  "Coworking Space": {
-    "cat": "Real Estate",
-    "price": 400,
-    "score": 84,
-    "intro": "A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",
-    "capital": "High capital",
-    "margin": "Research"
-  },
   "Commercial Property Management": {
     "cat": "Real Estate",
     "price": 400,
@@ -175,14 +167,6 @@ window.IDEAWORTH_PROJECTS = {
     "capital": "Premium capital",
     "margin": "Research"
   },
-  "Car Rental Micro-Fleet": {
-    "cat": "Automotive",
-    "price": 400,
-    "score": 84,
-    "intro": "A curated automotive business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",
-    "capital": "High capital",
-    "margin": "Research"
-  },
   "Short-Term Rental Management": {
     "cat": "Real Estate",
     "price": 800,
@@ -260,14 +244,6 @@ window.IDEAWORTH_PROJECTS = {
     "price": 400,
     "score": 84,
     "intro": "A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",
-    "capital": "High capital",
-    "margin": "Research"
-  },
-  "Serviced Apartments": {
-    "cat": "Tourism & Hospitality",
-    "price": 400,
-    "score": 84,
-    "intro": "A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",
     "capital": "High capital",
     "margin": "Research"
   },
@@ -356,22 +332,6 @@ window.IDEAWORTH_PROJECTS = {
     "price": 400,
     "score": 84,
     "intro": "A focused bakery concept with product-led sales, repeat demand and multiple order channels.",
-    "capital": "Low / variable",
-    "margin": "Research"
-  },
-  "Cloud Kitchen": {
-    "cat": "Food & Beverage",
-    "price": 400,
-    "score": 84,
-    "intro": "A delivery-first food operation designed around focused menus and controlled production.",
-    "capital": "Low / variable",
-    "margin": "Research"
-  },
-  "Food Truck": {
-    "cat": "Food & Beverage",
-    "price": 400,
-    "score": 84,
-    "intro": "A mobile food concept built around location flexibility, event demand and direct sales.",
     "capital": "Low / variable",
     "margin": "Research"
   },
@@ -957,6 +917,46 @@ window.IDEAWORTH_PROJECTS = {
     "score": 90,
     "intro": "Recurring calibration and compliance service for equipment used in industrial operations.",
     "capital": "Growth capital",
+    "margin": "U.S. market model"
+  },
+  "Medical Office Property Management": {
+    "cat": "Real Estate",
+    "price": 800,
+    "score": 90,
+    "capital": "Low / variable",
+    "intro": "Specialized property management for medical offices, clinics and healthcare operators with recurring service revenue.",
+    "margin": "U.S. market model"
+  },
+  "Senior Living Placement Service": {
+    "cat": "Health & Fitness",
+    "price": 400,
+    "score": 89,
+    "capital": "Low / variable",
+    "intro": "Referral and placement service connecting families with senior-living options and supporting the move process.",
+    "margin": "U.S. market model"
+  },
+  "Commercial Vehicle Leasing Brokerage": {
+    "cat": "B2B",
+    "price": 800,
+    "score": 88,
+    "capital": "Low / variable",
+    "intro": "B2B vehicle sourcing and leasing brokerage serving contractors, fleets and growing businesses.",
+    "margin": "U.S. market model"
+  },
+  "Corporate Meal Delivery Company": {
+    "cat": "Food & Beverage",
+    "price": 800,
+    "score": 88,
+    "capital": "Growth capital",
+    "intro": "Recurring business meal delivery focused on offices, institutions and scheduled corporate accounts.",
+    "margin": "U.S. market model"
+  },
+  "Mobile Catering Fleet": {
+    "cat": "Food & Beverage",
+    "price": 800,
+    "score": 87,
+    "capital": "Growth capital",
+    "intro": "Scalable mobile catering operation serving corporate events, venues and recurring contracts.",
     "margin": "U.S. market model"
   }
 };
