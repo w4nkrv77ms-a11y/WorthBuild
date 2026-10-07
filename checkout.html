@@ -19,5 +19,5 @@ document.getElementById("productName").textContent=name||"IdeaWorth Project";
 document.getElementById("checkoutTitle").innerHTML=(name?"Get the "+name:"Get the")+" <span>complete project.</span>";
 document.getElementById("productPrice").innerHTML="$"+price.toLocaleString()+" <span style='font-size:15px;color:#8f9bab;font-weight:400;'>one-time</span>";
 document.getElementById("benefits").innerHTML=["Decision & opportunity analysis","Market & competitor research framework","Startup capital & financial model","Equipment, setup & procurement checklist","Operations + SOP roadmap","Marketing & customer acquisition system","Sales scripts + retention plan","Break-even & profit roadmap","Project Room execution checklist"].map(x=>"<p>✓ "+x+"</p>").join("");
-function completeCheckout(event){event.preventDefault();alert("Demo checkout complete. Your Project Room is ready.");window.location.href="room.html?project="+encodeURIComponent(name||"Project");}
+function completeCheckout(event){event.preventDefault();alert("Order preview complete. Project Room opened.");window.location.href="room.html?project="+encodeURIComponent(name||"Project");}
 </script></body></html>
