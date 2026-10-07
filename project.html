@@ -73,188 +73,68 @@
 </main>
 <footer><div class="footer-inner"><div><a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a><p>Decide Before You Build.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="build.html">Build</a><a href="login.html">Account</a></div></div></footer>
 
+<script src="projects.js"></script>
 <script>
-const projects = {
-"Dental Practice Support Services":{cat:"Health & Fitness",price:400,score:82,intro:"A curated health & fitness business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Physiotherapy & Recovery Center":{cat:"Health & Fitness",price:400,score:83,intro:"A curated health & fitness business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Specialty Pharmacy Delivery":{cat:"Health & Fitness",price:200,score:80,intro:"A curated health & fitness business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Coworking Space":{cat:"Real Estate",price:200,score:81,intro:"A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Commercial Property Management":{cat:"Real Estate",price:800,score:85,intro:"A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Water Delivery Fleet":{cat:"Logistics",price:400,score:82,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Industrial Equipment Rental":{cat:"B2B",price:200,score:79,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Print & Signage Workshop":{cat:"Manufacturing",price:400,score:83,intro:"A curated manufacturing business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Commercial Kitchen Rental":{cat:"Food & Beverage",price:200,score:80,intro:"A curated food & beverage business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Beauty Salon":{cat:"Health & Fitness",price:400,score:84,intro:"A curated health & fitness business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Solar Panel Maintenance Service":{cat:"Energy",price:800,score:86,intro:"A curated energy business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Commercial Solar Farm":{cat:"Energy",price:100,score:78,intro:"A curated energy business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Fleet Management Service":{cat:"Logistics",price:400,score:84,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Last-Mile Delivery Hub":{cat:"Logistics",price:200,score:81,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Hostel & Budget Stay":{cat:"Tourism & Hospitality",price:200,score:80,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Specialty Tour Operator":{cat:"Tourism & Hospitality",price:400,score:84,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Wholesale Food Distributor":{cat:"B2B",price:400,score:82,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Industrial Safety Supplies":{cat:"B2B",price:400,score:83,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Custom Furniture Studio":{cat:"Manufacturing",price:200,score:81,intro:"A curated manufacturing business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Packaging Manufacturing":{cat:"Manufacturing",price:200,score:79,intro:"A curated manufacturing business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Home Painting Service":{cat:"Home & Property",price:400,score:84,intro:"A curated home & property business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Moving & Relocation Service":{cat:"Services",price:400,score:82,intro:"A curated services business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Mobile Tire Service":{cat:"Automotive",price:400,score:84,intro:"A curated automotive business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Auto Parts E-commerce":{cat:"Automotive",price:400,score:82,intro:"A curated automotive business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Motorcycle Service Center":{cat:"Automotive",price:200,score:81,intro:"A curated automotive business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Car Rental Micro-Fleet":{cat:"Automotive",price:100,score:78,intro:"A curated automotive business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Short-Term Rental Management":{cat:"Real Estate",price:800,score:86,intro:"A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Property Maintenance Company":{cat:"Real Estate",price:800,score:85,intro:"A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Self-Storage Facility":{cat:"Real Estate",price:200,score:80,intro:"A curated real estate business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Laundry Self-Service Center":{cat:"Services",price:200,score:81,intro:"A curated services business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Water Purification & Delivery":{cat:"Specialized",price:400,score:82,intro:"A curated specialized business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Solar Installation Company":{cat:"Energy",price:800,score:85,intro:"A curated energy business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"EV Charging Installation":{cat:"Energy",price:400,score:83,intro:"A curated energy business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Cold Storage Facility":{cat:"Logistics",price:200,score:79,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Local Delivery Fleet":{cat:"Logistics",price:400,score:82,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Micro Fulfillment Center":{cat:"Logistics",price:200,score:80,intro:"A curated logistics business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Boutique Hotel":{cat:"Tourism & Hospitality",price:100,score:78,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Serviced Apartments":{cat:"Tourism & Hospitality",price:200,score:81,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Tour & Excursion Agency":{cat:"Tourism & Hospitality",price:400,score:84,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Travel Concierge Service":{cat:"Tourism & Hospitality",price:800,score:85,intro:"A curated tourism & hospitality business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Specialty Grocery Store":{cat:"Food & Beverage",price:200,score:81,intro:"A curated food & beverage business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Frozen Food Distribution":{cat:"Food & Beverage",price:200,score:80,intro:"A curated food & beverage business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Commercial Bakery Production":{cat:"Food & Beverage",price:400,score:82,intro:"A curated food & beverage business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"B2B Office Supplies Company":{cat:"B2B",price:400,score:84,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Growth capital",margin:"Research"},
-"Packaging Supply Company":{cat:"B2B",price:400,score:83,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Recruitment Agency":{cat:"B2B",price:800,score:86,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Corporate Training Company":{cat:"B2B",price:800,score:85,intro:"A curated b2b business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Low / variable",margin:"Research"},
-"Private Label Cosmetics Brand":{cat:"E-commerce",price:400,score:82,intro:"A curated e-commerce business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Furniture Workshop":{cat:"Manufacturing",price:200,score:80,intro:"A curated manufacturing business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"Premium capital",margin:"Research"},
-"Small Manufacturing Workshop":{cat:"Manufacturing",price:200,score:79,intro:"A curated manufacturing business concept designed around a clear customer need, disciplined operations and a path to stronger unit economics.",capital:"High capital",margin:"Research"},
-"Coffee Shop":{cat:"Food & Beverage",price:400,score:82,intro:"A neighborhood coffee concept built around repeat customers, takeaway sales and a focused operating model.",capital:"Research",margin:"Research"},
-"Specialty Coffee Cart":{cat:"Food & Beverage",price:400,score:84,intro:"A compact coffee concept designed for mobility, lower fixed overhead and repeat local demand.",capital:"Research",margin:"Research"},
-"Bakery & Pastry Shop":{cat:"Food & Beverage",price:200,score:81,intro:"A focused bakery concept with product-led sales, repeat demand and multiple order channels.",capital:"Research",margin:"Research"},
-"Cloud Kitchen":{cat:"Food & Beverage",price:400,score:83,intro:"A delivery-first food operation designed around focused menus and controlled production.",capital:"Research",margin:"Research"},
-"Food Truck":{cat:"Food & Beverage",price:200,score:80,intro:"A mobile food concept built around location flexibility, event demand and direct sales.",capital:"Research",margin:"Research"},
-"Meal Prep Subscription":{cat:"Food & Beverage",price:800,score:85,intro:"A recurring meal model designed around subscriptions, predictable orders and retention.",capital:"Research",margin:"Research"},
-"Specialty Food Brand":{cat:"Food & Beverage",price:400,score:82,intro:"A packaged-food brand blueprint focused on repeat purchase, distribution and product margin.",capital:"Research",margin:"Research"},
-"Juice & Smoothie Bar":{cat:"Food & Beverage",price:200,score:79,intro:"A focused beverage concept with repeat-purchase potential and a streamlined menu.",capital:"Research",margin:"Research"},
-"Dessert & Ice Cream Shop":{cat:"Food & Beverage",price:200,score:80,intro:"A dessert-led retail concept designed around impulse purchases, occasions and repeat traffic.",capital:"Research",margin:"Research"},
-"Catering Business":{cat:"Food & Beverage",price:400,score:84,intro:"A flexible catering operation designed to monetize events, corporate orders and repeat clients.",capital:"Research",margin:"Research"},
-"Mobile Car Wash":{cat:"Services",price:800,score:86,intro:"A mobile service model designed around recurring customers, route density and low fixed overhead.",capital:"Research",margin:"Research"},
-"Car Detailing Studio":{cat:"Services",price:400,score:84,intro:"A specialist vehicle-care concept with premium service packages and upsell opportunities.",capital:"Research",margin:"Research"},
-"Residential Cleaning Service":{cat:"Services",price:800,score:87,intro:"A recurring home-service model designed around repeat bookings, referrals and route efficiency.",capital:"Research",margin:"Research"},
-"Commercial Cleaning Company":{cat:"Services",price:800,score:85,intro:"A contract-focused cleaning business built around recurring B2B revenue and operational systems.",capital:"Research",margin:"Research"},
-"Home Maintenance Service":{cat:"Services",price:400,score:83,intro:"A local home-service model combining repeat maintenance needs with higher-value jobs.",capital:"Research",margin:"Research"},
-"Lawn & Garden Care":{cat:"Services",price:400,score:82,intro:"A recurring property-care service designed around route density and maintenance contracts.",capital:"Research",margin:"Research"},
-"Laundry & Dry Cleaning Pickup":{cat:"Services",price:200,score:81,intro:"A pickup-and-delivery service model designed around recurring customers and route optimization.",capital:"Research",margin:"Research"},
-"Pet Grooming":{cat:"Services",price:400,score:83,intro:"A repeat-service pet care concept with appointment revenue and premium add-ons.",capital:"Research",margin:"Research"},
-"Pet Care & Boarding":{cat:"Services",price:200,score:80,intro:"A pet-care model combining recurring services with higher-value boarding opportunities.",capital:"Research",margin:"Research"},
-"Senior Companion Service":{cat:"Services",price:100,score:78,intro:"A service model focused on recurring companionship and support needs, subject to local rules.",capital:"Research",margin:"Research"},
-"Digital Marketing Agency":{cat:"Digital",price:1600,score:88,intro:"A productized agency model focused on recurring retainers, measurable outcomes and niche positioning.",capital:"Low / variable",margin:"Research"},
-"Social Media Content Studio":{cat:"Digital",price:800,score:86,intro:"A recurring content service built around packaged production, retainers and efficient workflows.",capital:"Low / variable",margin:"Research"},
-"UGC Creator Studio":{cat:"Digital",price:800,score:85,intro:"A creator-service model connecting brands with repeat content production and campaign packages.",capital:"Low / variable",margin:"Research"},
-"Web Design Agency":{cat:"Digital",price:800,score:87,intro:"A project-and-retainer web service built around repeatable delivery and high-value packages.",capital:"Low / variable",margin:"Research"},
-"B2B Lead Generation Agency":{cat:"Digital",price:1600,score:89,intro:"A B2B service model focused on measurable lead outcomes, recurring contracts and process automation.",capital:"Low / variable",margin:"Research"},
-"Virtual Assistant Agency":{cat:"Digital",price:400,score:84,intro:"A recurring support-service model built around packaged capacity and client retention.",capital:"Low / variable",margin:"Research"},
-"Bookkeeping Service":{cat:"Digital",price:800,score:86,intro:"A recurring B2B service model focused on monthly retainers and standardized delivery.",capital:"Low / variable",margin:"Research"},
-"Online Tutoring Academy":{cat:"Education",price:800,score:85,intro:"A tutoring model designed around recurring learning packages, retention and small-group economics.",capital:"Low / variable",margin:"Research"},
-"Skills Training Platform":{cat:"Education",price:800,score:87,intro:"A digital education model focused on repeatable curriculum, cohorts and subscription opportunities.",capital:"Low / variable",margin:"Research"},
-"Children's Enrichment Center":{cat:"Education",price:200,score:80,intro:"A local enrichment concept combining recurring programs with structured schedules.",capital:"Research",margin:"Research"},
-"Niche E-commerce Store":{cat:"E-commerce",price:400,score:84,intro:"A focused online retail model built around niche demand, merchandising and repeat purchase.",capital:"Research",margin:"Research"},
-"Beauty Products Store":{cat:"E-commerce",price:400,score:83,intro:"A focused beauty-commerce model built around product selection, content and repeat purchase.",capital:"Research",margin:"Research"},
-"Pet Products Store":{cat:"E-commerce",price:400,score:82,intro:"A niche pet-commerce model built around recurring needs and targeted product bundles.",capital:"Research",margin:"Research"},
-"Home Organization Store":{cat:"E-commerce",price:200,score:81,intro:"A focused home-products store built around practical problems, bundles and visual merchandising.",capital:"Research",margin:"Research"},
-"Personalized Gifts Brand":{cat:"E-commerce",price:400,score:83,intro:"A personalization-led commerce model designed around occasions, gifting and premium customization.",capital:"Research",margin:"Research"},
-"Subscription Box Brand":{cat:"E-commerce",price:200,score:80,intro:"A recurring-commerce model designed around curation, retention and predictable ordering.",capital:"Research",margin:"Research"},
-"Secondhand Fashion Store":{cat:"Retail",price:400,score:82,intro:"A resale retail model built around sourcing discipline, merchandising and inventory turns.",capital:"Research",margin:"Research"},
-"Mobile Accessories Store":{cat:"Retail",price:200,score:81,intro:"A focused accessories retail concept with frequent-purchase products and bundle opportunities.",capital:"Research",margin:"Research"},
-"Beauty & Skincare Boutique":{cat:"Retail",price:400,score:82,intro:"A specialist beauty retail concept designed around product expertise, bundles and repeat customers.",capital:"Research",margin:"Research"},
-"Convenience Mini Market":{cat:"Retail",price:100,score:78,intro:"A convenience retail model where location, inventory turns and basket size drive the economics.",capital:"Research",margin:"Research"},
-"Fitness Coaching Studio":{cat:"Health & Fitness",price:800,score:85,intro:"A coaching model built around recurring memberships, packages and retention.",capital:"Research",margin:"Research"},
-"Boutique Fitness Studio":{cat:"Health & Fitness",price:200,score:80,intro:"A premium studio model with recurring memberships, classes and higher-value services.",capital:"Research",margin:"Research"},
-"Yoga & Wellness Studio":{cat:"Health & Fitness",price:400,score:82,intro:"A recurring wellness model combining memberships, classes and complementary services.",capital:"Research",margin:"Research"},
-"Meal & Nutrition Coaching":{cat:"Health & Fitness",price:400,score:84,intro:"A coaching model built around recurring plans, accountability and premium support.",capital:"Low / variable",margin:"Research"},
-"Photography Studio":{cat:"Creative",price:400,score:82,intro:"A specialist creative service with package pricing, events and repeat commercial work.",capital:"Research",margin:"Research"},
-"Video Production Studio":{cat:"Creative",price:400,score:84,intro:"A project-based creative service with recurring commercial opportunities and premium packages.",capital:"Research",margin:"Research"},
-"Event Planning Agency":{cat:"Creative",price:400,score:83,intro:"An event service model built around planning fees, supplier coordination and repeat referrals.",capital:"Low / variable",margin:"Research"},
-"3D Printing Service":{cat:"Specialized",price:200,score:81,intro:"A specialized production service built around custom orders, prototyping and repeat B2B work.",capital:"Research",margin:"Research"},
-"IT Support & Managed Services":{cat:"Specialized",price:1600,score:88,intro:"A recurring B2B technology service focused on contracts, response times and retention.",capital:"Low / variable",margin:"Research"},
-"Smart Home Installation":{cat:"Specialized",price:400,score:83,intro:"A project-based installation service with equipment sourcing, installation and maintenance opportunities.",capital:"Research",margin:"Research"}
-};
-
-"B2B Procurement Platform":{cat:"B2B",price:400,score:88,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-"Commercial HVAC Service":{cat:"Services",price:800,score:87,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Industrial Maintenance Company":{cat:"B2B",price:800,score:86,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Accounting & CFO Services":{cat:"Services",price:400,score:88,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-"Specialty Logistics Brokerage":{cat:"Logistics",price:400,score:87,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-"Warehouse & Distribution Center":{cat:"Logistics",price:1600,score:85,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"High capital",margin:"Research"},
-"Cold Chain Delivery Service":{cat:"Logistics",price:800,score:86,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Water Treatment Plant":{cat:"Energy",price:1600,score:84,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"High capital",margin:"Research"},
-"Commercial EV Charging Network":{cat:"Energy",price:1600,score:86,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"High capital",margin:"Research"},
-"Solar Equipment Distribution":{cat:"Energy",price:800,score:85,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Private Label Food Manufacturing":{cat:"Manufacturing",price:800,score:84,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Commercial Laundry Plant":{cat:"Manufacturing",price:1600,score:85,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"High capital",margin:"Research"},
-"Metal Fabrication Workshop":{cat:"Manufacturing",price:800,score:84,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Modular Construction Company":{cat:"Manufacturing",price:1600,score:86,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"High capital",margin:"Research"},
-"Medical Equipment Distribution":{cat:"B2B",price:800,score:87,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Specialty Childcare Center":{cat:"Services",price:800,score:84,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Senior Home Care Agency":{cat:"Services",price:400,score:86,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-"Managed Property Services":{cat:"Real Estate",price:400,score:85,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-"Student Housing Management":{cat:"Real Estate",price:800,score:84,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Premium capital",margin:"Research"},
-"Commercial Cleaning Franchise":{cat:"Services",price:400,score:87,intro:"A curated business opportunity with a complete evaluation and execution path.",capital:"Growth capital",margin:"Research"},
-
 const q=new URLSearchParams(location.search);
 const requested=q.get("project");
-const p=projects[requested] || projects["Coffee Shop"];
-const name=requested && projects[requested] ? requested : "Coffee Shop";
+const projects=window.IDEAWORTH_PROJECTS||{};
+const fallback=Object.keys(projects)[0];
+const name=requested&&projects[requested]?requested:fallback;
+const p=projects[name];
 try{localStorage.setItem("iwActiveProject",name)}catch(e){}
 document.title=name+" — IdeaWorth";
-document.getElementById("projectEyebrow").textContent=p.cat.toUpperCase()+" · PROJECT BLUEPRINT";
+document.getElementById("projectEyebrow").textContent=p.cat.toUpperCase()+" · U.S. PROJECT BLUEPRINT";
 document.getElementById("projectTitle").innerHTML=name+" <span>Business Project.</span>";
 document.getElementById("projectIntro").textContent=p.intro;
-document.getElementById("scoreText").textContent="WorthScore: "+p.score+"/100. The score summarizes the project across demand, economics, competition, capital intensity and execution complexity.";
+document.getElementById("scoreText").textContent="IdeaWorth Score: "+p.score+"/100. A screening score based on demand durability, recurring-revenue potential, economics, competition, capital intensity and execution complexity.";
 document.getElementById("buyBtn").href="checkout.html?project="+encodeURIComponent(name);
-document.getElementById("buildBtn").href="build.html?project="+encodeURIComponent(name);
-
+if(document.getElementById("buildBtn"))document.getElementById("buildBtn").href="build.html?project="+encodeURIComponent(name);
 const stat=(label,value)=>'<div class="feature-card" style="padding:22px;"><div class="eyebrow">'+label+'</div><strong style="font-size:24px;display:block;margin-top:7px;">'+value+'</strong></div>';
-document.getElementById("projectStats").innerHTML=stat("PROJECT SYSTEM","$"+p.price)+stat("WORTHSCORE",p.score+"/100")+stat("CAPITAL CLASS",p.capital)+stat("DECISION MODEL","Complete");
-
-const items=["Business model & positioning","Market + competitor research framework","Location & customer analysis","Startup capital & financial model","Equipment / tools + procurement checklist","Supplier & sourcing plan","Licensing & setup checklist","Operations SOPs & daily workflow","Brand, pricing & offer structure","Marketing + customer acquisition plan","Sales scripts + follow-up system","Launch roadmap + first-customer plan","Break-even & profit roadmap","Risk register + what could go wrong","Project Room + editable execution checklist"];
+document.getElementById("projectStats").innerHTML=stat("SYSTEM PRICE","$"+p.price.toLocaleString())+stat("IDEAWORTH SCORE",p.score+"/100")+stat("CAPITAL CLASS",p.capital)+stat("MARKET","United States");
+const items=[
+"Business model & positioning","U.S. market & competitor analysis","Target customer & location logic","Startup capital & financial model",
+"Equipment / tools + procurement checklist","Supplier & sourcing plan","Licensing, insurance & setup checklist","Operations SOPs & daily workflow",
+"Brand, pricing & offer structure","Marketing + customer acquisition plan","Sales scripts + follow-up system","Launch roadmap + first-customer plan",
+"Break-even & profit roadmap","Risk register + decision checkpoints","Project Room + execution checklist"
+];
 document.getElementById("packageGrid").innerHTML=items.map((x,i)=>'<div style="padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><strong>'+String(i+1).padStart(2,"0")+'</strong><p style="color:#8f9bab;font-size:14px;margin:8px 0 0;">'+x+'</p></div>').join("");
 const steps=["Research","Fund","Set Up","Launch","First Sales","Break-even","Optimize Profit","Scale"];
 document.getElementById("profitPath").innerHTML=steps.map((x,i)=>'<div style="padding:18px 12px;text-align:center;border:1px solid rgba(255,255,255,.07);border-radius:14px;"><strong>'+String(i+1).padStart(2,"0")+'</strong><div style="margin-top:7px;">'+x+'</div></div>').join("");
-
 const systemSections=[
-["01","Opportunity & Customer","Target customer profile, core problem, demand drivers, buying triggers, customer segments and strongest use cases."],
-["02","Market & Competition","Market structure, direct and indirect competitors, positioning options, customer alternatives, pricing logic and evidence checklist."],
+["01","Opportunity & Customer","Target customer, demand drivers, buying triggers, customer segments and strongest use cases."],
+["02","Market & Competition","U.S. market structure, direct and indirect competitors, positioning, alternatives, pricing logic and evidence checkpoints."],
 ["03","Business Model","Revenue streams, offer structure, pricing architecture, sales channels, recurring-revenue opportunities and operating model."],
-["04","Capital Plan","Startup budget structure covering equipment, fit-out, technology, deposits, licenses, opening inventory, launch costs and working capital."],
-["05","Equipment & Procurement","Equipment/tools list, quantities, specifications, essential versus optional items, alternatives, space, utilities, installation and maintenance."],
-["06","Location & Setup","Location criteria, space planning, customer access, utilities, workflow, setup sequence and opening-readiness checklist."],
-["07","Legal & Compliance","Business setup, permits, insurance, contracts, safety requirements, employment considerations and recurring compliance checkpoints."],
-["08","Operations System","Daily workflow, roles, staffing logic, SOP structure, quality control, inventory/process controls, customer service and management routines."],
-["09","Marketing & Sales","Positioning, offer, launch campaign, acquisition channels, sales process, scripts, follow-up, referrals and first-customer plan."],
-["10","Financial Model","Revenue drivers, pricing, variable costs, fixed costs, gross margin, contribution margin, break-even logic, cash-flow planning and profit levers."],
-["11","Risk Control","Operational, financial, competitive, supplier, regulatory and customer risks with mitigation actions and decision checkpoints."],
-["12","90-Day Execution","Pre-launch preparation, opening sequence, first 30 days, optimization, customer acquisition, operating review and scale decision."],
-["13","Project Room","Purchase checklist, task ownership, milestones, documents, supplier follow-ups, launch checklist and ongoing improvement actions."]
+["04","Capital Plan","Equipment, fit-out, technology, deposits, licenses, opening inventory, launch costs and working capital."],
+["05","Equipment & Procurement","Required tools, quantities, specifications, essential versus optional items, alternatives, space, utilities and maintenance."],
+["06","Location & Setup","Location criteria, customer access, utilities, workflow, setup sequence and opening-readiness checklist."],
+["07","Legal & Compliance","Business formation, permits, insurance, contracts, safety and recurring compliance checkpoints."],
+["08","Operations System","Daily workflow, roles, staffing logic, SOPs, quality control, inventory/process controls and management routines."],
+["09","Marketing & Sales","Positioning, offer, launch campaign, acquisition channels, sales process, follow-up, referrals and retention."],
+["10","Financial Model","Revenue drivers, pricing, variable costs, fixed costs, margins, break-even, cash flow and profit levers."],
+["11","Risk Control","Operational, financial, competitive, supplier, regulatory and customer risks with mitigation actions."],
+["12","90-Day Execution","Pre-launch preparation, opening sequence, first 30 days, optimization, customer acquisition and operating review."],
+["13","Project Room","Purchase checklist, task ownership, milestones, documents, supplier follow-ups, launch checklist and ongoing improvement."]
 ];
 document.getElementById("systemSections").innerHTML=systemSections.map(x=>'<article style="padding:22px;border:1px solid rgba(255,255,255,.07);border-radius:16px;background:#081827;"><div class="eyebrow">'+x[0]+'</div><h3 style="font-size:18px;margin:9px 0 8px;">'+x[1]+'</h3><p style="color:#8f9bab;font-size:13px;line-height:1.65;margin:0;">'+x[2]+'</p></article>').join("");
 const economics=[
-["Package investment","$"+p.price,"Complete project system"],
-["Capital structure","Planned","Equipment + setup + opening + working capital"],
-["Revenue model","Defined","Primary offer and additional revenue paths"],
-["Cost model","Connected","Fixed + variable operating costs"],
-["Break-even","Mapped","Monthly sales level required to cover operating costs"],
+["System price","$"+p.price.toLocaleString(),"Complete IdeaWorth project package"],
+["Capital class",p.capital,"Startup, setup and working-capital planning"],
+["Revenue model","Mapped","Primary offer plus additional revenue paths"],
+["Cost model","Connected","Fixed and variable operating costs"],
+["Break-even","Mapped","Sales level required to cover operating costs"],
 ["Profit levers","Prioritized","Pricing, volume, mix, utilization and cost control"],
-["Cash control","Included","Opening cash buffer and working-capital checkpoints"]
+["Cash control","Included","Opening buffer and working-capital checkpoints"]
 ];
 document.getElementById("economicsGrid").innerHTML=economics.map(x=>'<div style="padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><div class="eyebrow">'+x[0]+'</div><strong style="font-size:21px;display:block;margin-top:7px;">'+x[1]+'</strong><p style="color:#8f9bab;font-size:12px;line-height:1.5;margin:6px 0 0;">'+x[2]+'</p></div>').join("");
 const ops=[
-["Setup checklist","Every pre-opening task is sequenced from premises and equipment through staffing, systems and readiness."],
-["Procurement checklist","Required tools/equipment, specifications, quantities, alternatives and purchasing checkpoints are organized before buying."],
-["Customer acquisition","A practical acquisition system connects positioning, channels, offer, sales follow-up and retention."],
+["Setup checklist","Pre-opening tasks are sequenced from premises and equipment through staffing, systems and readiness."],
+["Procurement checklist","Required equipment, specifications, quantities, alternatives and purchasing checkpoints are organized before buying."],
+["Customer acquisition","Positioning, channels, offer, sales follow-up and retention are connected into one acquisition system."],
 ["First 100 customers","A structured early-customer plan focuses on outreach, partnerships, referrals, offers and repeat purchase."],
-["Weekly management","Track sales, leads, conversion, average order value, gross margin, operating costs and cash."],
-["Scale decision","Expansion follows operating performance, demand strength, unit economics and capacity."]
+["Weekly management","Track sales, leads, conversion, average order value, margin, operating costs and cash."],
+["Scale decision","Expansion follows demand strength, operating performance, unit economics and capacity."]
 ];
 document.getElementById("opsGrid").innerHTML=ops.map(x=>'<div style="padding:22px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><h3 style="font-size:17px;margin:0 0 8px;">'+x[0]+'</h3><p style="color:#8f9bab;font-size:13px;line-height:1.65;margin:0;">'+x[1]+'</p></div>').join("");
-
 </script>
 </body>
 </html>
