@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Account — WorthBuild</title>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <title>Dashboard — WorthBuild</title>
+  <link rel="stylesheet" href="styles.css?v=22">
 </head>
 
 <body>
@@ -19,17 +19,16 @@
     <a href="build.html">Build</a>
   </nav>
 
-  <a class="header-cta" href="index.html">Home</a>
+  <a class="header-cta" href="explore.html">Explore Businesses</a>
 </header>
-
 
 <main>
 
-<section class="hero" style="min-height:auto;padding-bottom:45px;">
+<section class="hero" style="min-height:auto;padding-bottom:50px;">
 
   <div class="hero-copy">
 
-    <div class="eyebrow">YOUR ACCOUNT</div>
+    <div class="eyebrow">ACCOUNT · DEMO</div>
 
     <h1>
       Welcome to your
@@ -37,7 +36,7 @@
     </h1>
 
     <p>
-      Keep your projects, evaluations and Build Systems
+      Keep your evaluations, projects and business-building journey
       organized in one place.
     </p>
 
@@ -46,7 +45,7 @@
 </section>
 
 
-<section style="padding:20px 6% 90px;">
+<section style="padding:20px 6% 100px;">
 
   <div class="features">
 
@@ -57,12 +56,17 @@
       <h2>Coffee Shop</h2>
 
       <p>
-        Your current business project.
+        Your current business project is ready to continue.
       </p>
 
-      <strong>WorthScore · 82/100 Demo</strong>
-
-      <br><br>
+      <div style="
+        margin:20px 0;
+        display:flex;
+        justify-content:space-between;
+      ">
+        <span style="color:#8f9bab;">Progress</span>
+        <strong>24%</strong>
+      </div>
 
       <a class="primary-btn" href="room.html">
         Open Project Room →
@@ -75,14 +79,15 @@
 
       <div class="eyebrow">EVALUATIONS</div>
 
-      <h2>1 Saved Report</h2>
+      <h2>Your WorthScores</h2>
 
       <p>
-        Your business evaluations will appear here.
+        Review your previous business evaluations and understand
+        the factors behind each score.
       </p>
 
-      <a class="secondary-btn" href="report.html">
-        View Report
+      <a class="primary-btn" href="report.html">
+        View Evaluation →
       </a>
 
     </article>
@@ -90,16 +95,34 @@
 
     <article class="feature-card">
 
-      <div class="eyebrow">BUILD SYSTEM</div>
+      <div class="eyebrow">BUILD ACCESS</div>
 
-      <h2>Your Build Access</h2>
+      <h2>Build System</h2>
 
       <p>
-        Continue working through your business launch system.
+        Continue from evaluation to planning, setup and launch.
       </p>
 
-      <a class="secondary-btn" href="build.html">
-        Continue Building
+      <a class="primary-btn" href="build.html">
+        Open Build System →
+      </a>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="eyebrow">DISCOVER</div>
+
+      <h2>Explore Businesses</h2>
+
+      <p>
+        Discover other business opportunities and compare
+        projects before making a decision.
+      </p>
+
+      <a class="secondary-btn" href="explore.html">
+        Explore Projects →
       </a>
 
     </article>
@@ -108,47 +131,56 @@
 
 
   <section style="
-    margin-top:35px;
+    margin-top:40px;
     padding:35px;
     border:1px solid rgba(255,255,255,.08);
     border-radius:22px;
     background:rgba(255,255,255,.025);
   ">
 
-    <div class="eyebrow">ACCOUNT STATUS</div>
+    <div class="eyebrow">YOUR WORTHBUILD JOURNEY</div>
 
-    <h2 style="font-size:30px;margin:8px 0 12px;">
-      Your WorthBuild journey
+    <h2 style="font-size:32px;margin:8px 0 12px;">
+      Evaluate. Decide. Build.
     </h2>
 
-    <p style="color:#9ba6b5;">
-      Explore businesses → Evaluate → Compare → Choose →
-      Build → Launch
+    <p style="
+      max-width:720px;
+      color:#9ba6b5;
+    ">
+      WorthBuild is designed to keep the entire journey connected —
+      from discovering a business opportunity to evaluating it and
+      building the system needed to move forward.
     </p>
+
+    <div style="
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:25px;
+    ">
+
+      <a class="primary-btn" href="room.html">
+        Continue My Project →
+      </a>
+
+      <a class="secondary-btn" href="start.html">
+        Start Another Project
+      </a>
+
+    </div>
 
   </section>
 
 
-  <div style="
-    text-align:center;
-    margin-top:40px;
-  ">
-
-    <a class="primary-btn" href="explore.html">
-      Explore More Businesses →
-    </a>
-
-  </div>
-
-
   <p style="
     text-align:center;
+    margin-top:35px;
     color:#8f9bab;
     font-size:13px;
-    margin-top:30px;
   ">
-    DEMO ACCOUNT — Authentication, saved projects and payments
-    will be connected before launch.
+    DEMO ACCOUNT — Real authentication, saved projects and personal
+    data will be connected before launch.
   </p>
 
 </section>
@@ -157,23 +189,15 @@
 
 
 <footer>
-
-  <div class="footer-inner">
-
-    <div>
-      <a class="logo" href="index.html">WorthBuild</a>
-      <p>Smarter decisions. Bigger dreams.</p>
-    </div>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="start.html">Get Started</a>
-      <a href="explore.html">Explore</a>
-      <a href="login.html">Account</a>
-    </div>
-
+  <div style="
+    text-align:center;
+    padding:35px 20px;
+    color:#8f9bab;
+  ">
+    <strong style="color:#fff;">WorthBuild</strong>
+    <br>
+    From Idea to Profit.
   </div>
-
 </footer>
 
 </body>
