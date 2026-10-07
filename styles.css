@@ -109,7 +109,7 @@ button,a{touch-action:manipulation}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 }
 
-/* Premium WorthBuild brand polish */
+/* Premium IdeaWorth brand polish */
 .logo{position:relative;transition:transform .2s ease,opacity .2s ease}
 .logo:hover{transform:translateY(-1px);opacity:.96}
 .logo-bars{filter:drop-shadow(0 0 8px rgba(49,230,177,.16))}
