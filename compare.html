@@ -15,7 +15,7 @@
 .compare-toolbar{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:12px;margin-bottom:22px}
 .compare-toolbar input,.compare-toolbar select{width:100%;min-height:48px}
 .compare-count{display:flex;align-items:center;justify-content:center;padding:0 16px;border:1px solid rgba(57,231,175,.18);border-radius:10px;color:#39e7af;background:#0a1c2e;font-size:12px;font-weight:800;white-space:nowrap}
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.category-section{grid-column:1/-1;margin-top:34px}.category-section:first-child{margin-top:0}.category-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:0 2px 14px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:14px}.category-head h2{margin:0;font-size:22px}.category-head span{color:#39e7af;font-size:11px;font-weight:800}.category-head small{color:#718294;font-size:11px}.category-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .compare-card{position:relative;padding:22px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(155deg,#0b1d30,#071827);transition:.2s}
 .compare-card:hover{transform:translateY(-3px);border-color:rgba(57,231,175,.24)}
 .compare-card.selected{border-color:#39e7af;box-shadow:0 0 0 1px rgba(57,231,175,.18),0 20px 55px rgba(0,0,0,.2)}
@@ -42,8 +42,8 @@
 .compare-table th,.compare-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.06);text-align:left;font-size:11px}
 .compare-table th{color:#7f90a1;font-weight:700}
 .empty-state{text-align:center;padding:45px 20px;color:#8190a0;border:1px dashed rgba(255,255,255,.1);border-radius:18px;display:none}
-@media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.compare-toolbar{grid-template-columns:1fr 1fr}.compare-count{min-height:48px}.selected-list{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.compare-hero{padding:48px 0 35px}.compare-hero h1{font-size:38px}.compare-shell{padding-top:20px}.compare-toolbar{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}.compare-card{padding:20px}.selected-list{grid-template-columns:1fr}.compare-panel{bottom:8px;padding:15px}.compare-table{font-size:10px}}
+@media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.category-cards{grid-template-columns:1fr 1fr}.compare-toolbar{grid-template-columns:1fr 1fr}.compare-count{min-height:48px}.selected-list{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.compare-hero{padding:48px 0 35px}.compare-hero h1{font-size:38px}.compare-shell{padding-top:20px}.compare-toolbar{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}.category-cards{grid-template-columns:1fr}.category-head{align-items:flex-start;flex-direction:column;gap:6px}.compare-card{padding:20px}.selected-list{grid-template-columns:1fr}.compare-panel{bottom:8px;padding:15px;overflow:auto}.compare-table{font-size:10px;display:block;overflow-x:auto;white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -57,7 +57,7 @@
 <div class="hero-copy">
 <div class="eyebrow">COMPARE 120 PROJECTS</div>
 <h1>Choose with <span>evidence.</span></h1>
-<p>Compare projects across the full IdeaWorth catalogue using one consistent decision framework. Select up to four opportunities and put the economics side by side before you commit.</p>
+<p>Explore the complete IdeaWorth catalogue, organized by business category. Compare opportunities side by side using the same decision framework, then open any project for its full business system.</p>
 </div>
 </section>
 <section class="compare-shell">
@@ -71,11 +71,11 @@
 <div id="grid" class="compare-grid"></div>
 <div id="empty" class="empty-state">No projects match these filters.</div>
 <div class="compare-panel">
-<div class="compare-panel-head"><div><strong>Your comparison</strong> <span id="selectedCount">0 / 4 selected</span></div><span>Select up to four projects</span></div>
+<div class="compare-panel-head"><div><strong>Your comparison</strong> <span id="selectedCount">0 / 6 selected</span></div><span>Select up to six projects from any category</span></div>
 <div id="selected" class="selected-list"></div>
 <table id="comparisonTable" class="compare-table"></table>
 </div>
-<p style="text-align:center;margin:28px 0 0;color:#718294;font-size:11px">DEMO DATA — WorthScores and project pricing shown here are curated framework values until live market evidence is connected. They are not guarantees of profit.</p>
+<p style="text-align:center;margin:28px 0 0;color:#718294;font-size:11px">IDEAWORTH DECISION STANDARD — Every opportunity is organized around market opportunity, capital requirements, economics, competition and execution.</p>
 </div>
 </section>
 </main>
@@ -90,19 +90,19 @@ function render(){
  const list=projects.filter(p=>(!q||p.name.toLowerCase().includes(q))&&(!cat||p.cat===cat)&&p.score>=min);
  count.textContent=list.length+" projects";
  empty.style.display=list.length?"none":"block";
- grid.innerHTML=list.map((p,i)=>{const key=p.name,sel=selected.has(key);return '<article class="compare-card '+(sel?"selected":"")+'"><input class="compare-check" type="checkbox" '+(sel?"checked":"")+' aria-label="Select '+esc(key)+'" onchange="toggle('+JSON.stringify(key)+')"><div class="compare-num">'+String(projects.indexOf(p)+1).padStart(3,"0")+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class="compare-meta">'+esc(p.capital)+' · Complete system package</div><div class="compare-score"><div><small>WorthScore</small><strong>'+p.score+'</strong><small>/100</small></div><div class="compare-price"><span>System price</span><br><b>$'+p.price.toLocaleString()+"</b></div></div><div class="compare-actions"><a href="project.html?project='+encodeURIComponent(p.name)+'">View Project →</a><button type="button" onclick="toggle('+JSON.stringify(key)+')">'+(sel?"Remove":"Compare")+'</button></div></article>'}).join("");
+ const groups={}; list.forEach(p=>(groups[p.cat]??=[]).push(p)); const cats=Object.keys(groups).sort(); grid.innerHTML=cats.map(cat=>`<section class="category-section"><div class="category-head"><div><h2>${esc(cat)}</h2><small>${groups[cat].length} opportunities in this category</small></div><span>EXPLORE CATEGORY</span></div><div class="category-cards">${groups[cat].map((p,i)=>{const key=p.name,sel=selected.has(key);return '<article class="compare-card '+(sel?"selected":"")+'"><input class="compare-check" type="checkbox" '+(sel?"checked":"")+' aria-label="Select '+esc(key)+'" onchange="toggle('+JSON.stringify(key)+')"><div class="compare-num">'+String(projects.indexOf(p)+1).padStart(3,"0")+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class="compare-meta">'+esc(p.capital)+' · Complete system package</div><div class="compare-score"><div><small>WorthScore</small><strong>'+p.score+'</strong><small>/100</small></div><div class="compare-price"><span>System price</span><br><b>$'+p.price.toLocaleString()+"</b></div></div><div class="compare-actions"><a href="project.html?project='+encodeURIComponent(p.name)+'">View Project →</a><button type="button" onclick="toggle('+JSON.stringify(key)+')">'+(sel?"Remove":"Compare")+'</button></div></article>'}).join("");
  renderSelected();
 }
 function toggle(name){
  if(selected.has(name)) selected.delete(name);
- else if(selected.size<4) selected.add(name);
- else {alert("You can compare up to 4 projects at a time.");return}
+ else if(selected.size<6) selected.add(name);
+ else {alert("You can compare up to 6 projects at a time.");return}
  render();
 }
 function renderSelected(){
  const arr=projects.filter(p=>selected.has(p.name));
- selectedCount.textContent=arr.length+" / 4 selected";
- selectedBox.innerHTML=arr.length?arr.map(p=>'<div class="selected-item"><b>'+esc(p.name)+'</b><small>'+p.score+'/100 · $'+p.price.toLocaleString()+'</small></div>').join(""):'<div style="grid-column:1/-1;color:#718294;font-size:12px;padding:8px">Choose two to four projects to see the comparison below.</div>';
+ selectedCount.textContent=arr.length+" / 6 selected";
+ selectedBox.innerHTML=arr.length?arr.map(p=>'<div class="selected-item"><b>'+esc(p.name)+'</b><small>'+p.score+'/100 · $'+p.price.toLocaleString()+'</small></div>').join(""):'<div style="grid-column:1/-1;color:#718294;font-size:12px;padding:8px">Choose two to six projects to see the comparison below.</div>';
  if(arr.length<2){table.style.display="none";table.innerHTML="";return}
  table.style.display="table";
  table.innerHTML='<thead><tr><th>Metric</th>'+arr.map(p=>'<th>'+esc(p.name)+'</th>').join("")+'</tr></thead><tbody>'+
