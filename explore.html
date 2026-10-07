@@ -206,5 +206,33 @@
 
 </footer>
 
+<script>
+(function(){
+  const search=document.getElementById("businessSearch");
+  const category=document.getElementById("categoryFilter");
+  const budget=document.getElementById("budgetFilter");
+  const cards=[...document.querySelectorAll(".business-card")];
+  const empty=document.getElementById("noResults");
+  if(!search) return;
+  function filter(){
+    const q=search.value.toLowerCase().trim(), cat=category.value, bud=budget.value;
+    let shown=0;
+    cards.forEach(card=>{
+      const matchesText=!q || card.dataset.name.includes(q) || card.dataset.category.toLowerCase().includes(q);
+      const matchesCat=cat==="All Categories" || card.dataset.category===cat;
+      const matchesBudget=bud==="Any Budget" || card.dataset.budget===bud;
+      const show=matchesText && matchesCat && matchesBudget;
+      card.style.display=show ? "" : "none";
+      if(show) shown++;
+    });
+    empty.style.display=shown ? "none" : "block";
+  }
+  [search,category,budget].forEach(el=>el.addEventListener("input",filter));
+  [category,budget].forEach(el=>el.addEventListener("change",filter));
+  const params=new URLSearchParams(location.search);
+  if(params.get("budget")==="Under $10,000") budget.value="under10";
+  filter();
+})();
+</script>
 </body>
 </html>
