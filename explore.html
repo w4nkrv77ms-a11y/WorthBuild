@@ -52,7 +52,7 @@
     margin-bottom:40px;
   ">
 
-    <input
+    <input id="businessSearch"
       type="text"
       placeholder="Search businesses..."
       style="flex:1;min-width:220px;"
@@ -68,10 +68,10 @@
 
     <select id="budgetFilter" style="min-width:160px;" aria-label="Filter by budget">
       <option>Any Budget</option>
-      <option>Under $10K</option>
-      <option>$10K – $50K</option>
-      <option>$50K – $100K</option>
-      <option>$100K+</option>
+      <option value="under10">Under $10K</option>
+      <option value="10to50">$10K – $50K</option>
+      <option value="50to100">$50K – $100K</option>
+      <option value="100plus">$100K+</option>
     </select>
 
   </div>
@@ -156,6 +156,8 @@
 
   </div>
 
+
+  <div id="noResults" style="display:none;text-align:center;margin:35px 0;color:#9ba6b5;">No matching projects yet. Try another search or filter.</div>
 
   <div style="
     text-align:center;
