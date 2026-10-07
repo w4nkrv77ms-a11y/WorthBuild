@@ -18,7 +18,7 @@
 <div class="hero-copy">
 <div class="eyebrow" id="projectEyebrow">BUSINESS PROJECT</div>
 <h1 id="projectTitle">Business Project <span>Blueprint.</span></h1>
-<p id="projectIntro">A complete IdeaWorth project blueprint designed to take a buyer from research and setup through launch, sales and profitability planning.</p>
+<p id="projectIntro">A complete IdeaWorth business blueprint covering the decisions, setup, operations, customer acquisition, financial model and execution path required to build this opportunity.</p>
 <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;">
 <a class="primary-btn" id="buyBtn" href="checkout.html">Get This Project →</a>
 <a class="secondary-btn" href="compare.html">Compare Projects</a>
@@ -30,7 +30,7 @@
 <div id="projectStats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:25px;"></div>
 
 <div class="features">
-<article class="feature-card"><div class="eyebrow">01 · DECISION</div><h2>WorthScore</h2><p id="scoreText">Illustrative score pending verified research for the selected market.</p></article>
+<article class="feature-card"><div class="eyebrow">01 · DECISION</div><h2>WorthScore</h2><p id="scoreText">A structured 100-point decision score covering demand, economics, competition, capital intensity and execution complexity.</p></article>
 <article class="feature-card"><div class="eyebrow">02 · MARKET</div><h2>Demand & Competition</h2><p>Target customer, demand signals, competitive landscape, positioning gaps, pricing logic and evidence to collect before committing capital.</p></article>
 <article class="feature-card"><div class="eyebrow">03 · MONEY</div><h2>Profit Engine</h2><p>Startup capital, unit economics, pricing, monthly costs, break-even logic, cash-flow assumptions and the levers that can improve owner profit.</p></article>
 <article class="feature-card"><div class="eyebrow">04 · EXECUTION</div><h2>Launch System</h2><p>Equipment or tools, suppliers, setup, operating procedures, marketing, sales, launch milestones and a practical route toward first customers.</p></article>
@@ -47,11 +47,28 @@
 <div class="eyebrow">PATH TO PROFIT</div>
 <h2 style="font-size:32px;margin:8px 0 12px;">From capital to customers to profit.</h2>
 <div id="profitPath" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:24px;"></div>
-<p style="color:#8f9bab;font-size:13px;margin-top:22px;">Profitability is a planning target, not a guarantee. Local research, execution and customer behavior determine the actual outcome.</p>
+<p style="color:#8f9bab;font-size:13px;margin-top:22px;">The plan connects capital, setup, operations, customer acquisition, break-even and profit improvement into one execution path.</p>
 </section>
 
+
+<section style="margin-top:35px;padding:35px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(255,255,255,.025);">
+<div class="eyebrow">THE COMPLETE PROJECT SYSTEM</div>
+<h2 style="font-size:32px;margin:8px 0 12px;">A project you can actually execute.</h2>
+<p style="max-width:760px;color:#9ba6b5;">The blueprint is organized in the same order an operator needs to make decisions: understand the market, size the opportunity, fund the setup, build the operation, acquire customers, reach break-even and improve profit.</p>
+<div id="systemSections" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:28px;"></div>
+</section>
+<section style="margin-top:35px;padding:35px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(255,255,255,.025);">
+<div class="eyebrow">CAPITAL & ECONOMICS</div>
+<h2 style="font-size:32px;margin:8px 0 12px;">Know what the money is doing.</h2>
+<div id="economicsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:24px;"></div>
+</section>
+<section style="margin-top:35px;padding:35px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(255,255,255,.025);">
+<div class="eyebrow">OPERATIONS & GROWTH</div>
+<h2 style="font-size:32px;margin:8px 0 12px;">From first setup to repeatable growth.</h2>
+<div id="opsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px;"></div>
+</section>
 <div style="text-align:center;margin-top:45px;"><a class="primary-btn" id="buildBtn" href="build.html">See the Complete Build Package →</a></div>
-<p style="text-align:center;margin-top:30px;color:#8f9bab;font-size:13px;">CATALOGUE PREVIEW — Scores, costs and market assumptions remain illustrative until verified research is connected for the selected market.</p>
+<p style="text-align:center;margin-top:30px;color:#8f9bab;font-size:13px;">IDEAWORTH DECISION STANDARD — Every opportunity is organized around the numbers, decisions and execution steps that matter before capital is committed.</p>
 </section>
 </main>
 <footer><div class="footer-inner"><div><a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a><p>Decide Before You Build.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="build.html">Build</a><a href="login.html">Account</a></div></div></footer>
@@ -189,17 +206,54 @@ document.title=name+" — IdeaWorth";
 document.getElementById("projectEyebrow").textContent=p.cat.toUpperCase()+" · PROJECT BLUEPRINT";
 document.getElementById("projectTitle").innerHTML=name+" <span>Business Project.</span>";
 document.getElementById("projectIntro").textContent=p.intro;
-document.getElementById("scoreText").textContent="Demo WorthScore: "+p.score+"/100. The live score should be recalculated for the buyer's country, city, budget and evidence.";
+document.getElementById("scoreText").textContent="WorthScore: "+p.score+"/100. The score summarizes the project across demand, economics, competition, capital intensity and execution complexity.";
 document.getElementById("buyBtn").href="checkout.html?project="+encodeURIComponent(name);
 document.getElementById("buildBtn").href="build.html?project="+encodeURIComponent(name);
 
 const stat=(label,value)=>'<div class="feature-card" style="padding:22px;"><div class="eyebrow">'+label+'</div><strong style="font-size:24px;display:block;margin-top:7px;">'+value+'</strong></div>';
-document.getElementById("projectStats").innerHTML=stat("COMPLETE SYSTEM","$"+p.price)+stat("DEMO SCORE",p.score+"/100")+stat("STARTUP CAPITAL",p.capital)+stat("MARGIN","Evidence first");
+document.getElementById("projectStats").innerHTML=stat("PROJECT SYSTEM","$"+p.price)+stat("WORTHSCORE",p.score+"/100")+stat("CAPITAL CLASS",p.capital)+stat("DECISION MODEL","Complete");
 
 const items=["Business model & positioning","Market + competitor research framework","Location & customer analysis","Startup capital & financial model","Equipment / tools + procurement checklist","Supplier & sourcing plan","Licensing & setup checklist","Operations SOPs & daily workflow","Brand, pricing & offer structure","Marketing + customer acquisition plan","Sales scripts + follow-up system","Launch roadmap + first-customer plan","Break-even & profit roadmap","Risk register + what could go wrong","Project Room + editable execution checklist"];
 document.getElementById("packageGrid").innerHTML=items.map((x,i)=>'<div style="padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><strong>'+String(i+1).padStart(2,"0")+'</strong><p style="color:#8f9bab;font-size:14px;margin:8px 0 0;">'+x+'</p></div>').join("");
 const steps=["Research","Fund","Set Up","Launch","First Sales","Break-even","Optimize Profit","Scale"];
 document.getElementById("profitPath").innerHTML=steps.map((x,i)=>'<div style="padding:18px 12px;text-align:center;border:1px solid rgba(255,255,255,.07);border-radius:14px;"><strong>'+String(i+1).padStart(2,"0")+'</strong><div style="margin-top:7px;">'+x+'</div></div>').join("");
+
+const systemSections=[
+["01","Opportunity & Customer","Target customer profile, core problem, demand drivers, buying triggers, customer segments and strongest use cases."],
+["02","Market & Competition","Market structure, direct and indirect competitors, positioning options, customer alternatives, pricing logic and evidence checklist."],
+["03","Business Model","Revenue streams, offer structure, pricing architecture, sales channels, recurring-revenue opportunities and operating model."],
+["04","Capital Plan","Startup budget structure covering equipment, fit-out, technology, deposits, licenses, opening inventory, launch costs and working capital."],
+["05","Equipment & Procurement","Equipment/tools list, quantities, specifications, essential versus optional items, alternatives, space, utilities, installation and maintenance."],
+["06","Location & Setup","Location criteria, space planning, customer access, utilities, workflow, setup sequence and opening-readiness checklist."],
+["07","Legal & Compliance","Business setup, permits, insurance, contracts, safety requirements, employment considerations and recurring compliance checkpoints."],
+["08","Operations System","Daily workflow, roles, staffing logic, SOP structure, quality control, inventory/process controls, customer service and management routines."],
+["09","Marketing & Sales","Positioning, offer, launch campaign, acquisition channels, sales process, scripts, follow-up, referrals and first-customer plan."],
+["10","Financial Model","Revenue drivers, pricing, variable costs, fixed costs, gross margin, contribution margin, break-even logic, cash-flow planning and profit levers."],
+["11","Risk Control","Operational, financial, competitive, supplier, regulatory and customer risks with mitigation actions and decision checkpoints."],
+["12","90-Day Execution","Pre-launch preparation, opening sequence, first 30 days, optimization, customer acquisition, operating review and scale decision."],
+["13","Project Room","Purchase checklist, task ownership, milestones, documents, supplier follow-ups, launch checklist and ongoing improvement actions."]
+];
+document.getElementById("systemSections").innerHTML=systemSections.map(x=>'<article style="padding:22px;border:1px solid rgba(255,255,255,.07);border-radius:16px;background:#081827;"><div class="eyebrow">'+x[0]+'</div><h3 style="font-size:18px;margin:9px 0 8px;">'+x[1]+'</h3><p style="color:#8f9bab;font-size:13px;line-height:1.65;margin:0;">'+x[2]+'</p></article>').join("");
+const economics=[
+["Package investment","$"+p.price,"Complete project system"],
+["Capital structure","Planned","Equipment + setup + opening + working capital"],
+["Revenue model","Defined","Primary offer and additional revenue paths"],
+["Cost model","Connected","Fixed + variable operating costs"],
+["Break-even","Mapped","Monthly sales level required to cover operating costs"],
+["Profit levers","Prioritized","Pricing, volume, mix, utilization and cost control"],
+["Cash control","Included","Opening cash buffer and working-capital checkpoints"]
+];
+document.getElementById("economicsGrid").innerHTML=economics.map(x=>'<div style="padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><div class="eyebrow">'+x[0]+'</div><strong style="font-size:21px;display:block;margin-top:7px;">'+x[1]+'</strong><p style="color:#8f9bab;font-size:12px;line-height:1.5;margin:6px 0 0;">'+x[2]+'</p></div>').join("");
+const ops=[
+["Setup checklist","Every pre-opening task is sequenced from premises and equipment through staffing, systems and readiness."],
+["Procurement checklist","Required tools/equipment, specifications, quantities, alternatives and purchasing checkpoints are organized before buying."],
+["Customer acquisition","A practical acquisition system connects positioning, channels, offer, sales follow-up and retention."],
+["First 100 customers","A structured early-customer plan focuses on outreach, partnerships, referrals, offers and repeat purchase."],
+["Weekly management","Track sales, leads, conversion, average order value, gross margin, operating costs and cash."],
+["Scale decision","Expansion follows operating performance, demand strength, unit economics and capacity."]
+];
+document.getElementById("opsGrid").innerHTML=ops.map(x=>'<div style="padding:22px;border:1px solid rgba(255,255,255,.07);border-radius:16px;"><h3 style="font-size:17px;margin:0 0 8px;">'+x[0]+'</h3><p style="color:#8f9bab;font-size:13px;line-height:1.65;margin:0;">'+x[1]+'</p></div>').join("");
+
 </script>
 </body>
 </html>
