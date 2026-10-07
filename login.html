@@ -23,7 +23,7 @@
 <a class="header-cta" href="explore.html">Explore Businesses</a>
 </header>
 
-<main class="dashboard">
+<main class="dashboard"><script>try{document.documentElement.dataset.activeProject=localStorage.getItem("iwActiveProject")||""}catch(e){document.documentElement.dataset.activeProject=""}</script>
 <div class="dash-wrap">
 <section class="dash-top">
 <div><div class="dash-label">YOUR DECISION CENTER</div><h1>Build with <span>clarity.</span></h1><p>Keep your business decisions, project progress, WorthScore and build system connected in one place.</p></div>
@@ -32,11 +32,11 @@
 
 <section class="project-hero">
 <div class="project-head">
-<div><div class="dash-label">ACTIVE PROJECT · 01</div><h2>Coffee Shop</h2><p>Food & Beverage · Project Workspace</p></div>
-<div class="score-box"><strong>82</strong><small>WORTHSCORE / 100</small></div>
+<div><div class="dash-label">ACTIVE PROJECT · 01</div><h2 id="activeProjectName">Choose a project</h2><p id="activeProjectMeta">Select an opportunity to make it your active project.</p></div>
+<div class="score-box"><strong id="activeScore">—</strong><small id="activeScoreLabel">WORTHSCORE / 100</small></div>
 </div>
-<div class="progress-track"><i></i></div>
-<div class="progress-meta"><span>Project progress</span><b>24% complete</b></div>
+<div class="progress-track"><i id="activeProgress"></i></div>
+<div class="progress-meta"><span>Project progress</span><b id="activeProgressText">Ready to begin</b></div>
 <div class="stage-grid">
 <div class="stage active"><b>01</b><strong>Evaluate</strong><small>Complete</small></div>
 <div class="stage active"><b>02</b><strong>Decide</strong><small>Complete</small></div>
@@ -44,7 +44,7 @@
 <div class="stage locked"><b>04</b><strong>Launch</strong><small>Next stage</small></div>
 <div class="stage locked"><b>05</b><strong>Grow</strong><small>Roadmap</small></div>
 </div>
-<div style="margin-top:22px"><a class="primary-btn" href="room.html">Open Project Room →</a></div>
+<div style="margin-top:22px"><a id="openRoom" class="primary-btn" href="explore.html">Choose a Project →</a></div>
 </section>
 
 <section class="dash-grid">
@@ -68,7 +68,26 @@
 <div class="dash-action" style="margin-top:18px"><a class="primary-btn" href="room.html">Continue My Project →</a><a class="secondary-btn" href="start.html">Start Another Evaluation</a></div>
 </section>
 </div>
-</main>
+<script>
+(function(){
+var projects={"Coffee Shop":82,"Specialty Coffee Cart":80,"Bakery & Pastry Shop":81,"Cloud Kitchen":82,"Food Truck":83};
+var name="";
+try{name=localStorage.getItem("iwActiveProject")||""}catch(e){}
+var title=document.getElementById("activeProjectName"),meta=document.getElementById("activeProjectMeta"),score=document.getElementById("activeScore"),bar=document.getElementById("activeProgress"),prog=document.getElementById("activeProgressText"),room=document.getElementById("openRoom");
+if(name){
+title.textContent=name;
+score.textContent=projects[name]||"—";
+meta.textContent="Active business opportunity · Project Workspace";
+bar.style.width="24%";prog.textContent="24% complete";
+room.href="room.html?project="+encodeURIComponent(name);room.textContent="Open Project Room →";
+}else{
+title.textContent="Choose your project";
+meta.textContent="Explore an opportunity to make it your active project.";
+score.textContent="—";bar.style.width="0%";prog.textContent="Ready to begin";
+room.href="explore.html";room.textContent="Choose a Project →";
+}
+})();
+</script></main>
 
 <footer><div style="text-align:center;padding:35px 20px;color:#8f9bab"><span class="logo"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></span><br>Decide Before You Build.</div></footer>
 </body>
