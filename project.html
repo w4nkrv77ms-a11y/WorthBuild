@@ -202,6 +202,7 @@ const q=new URLSearchParams(location.search);
 const requested=q.get("project");
 const p=projects[requested] || projects["Coffee Shop"];
 const name=requested && projects[requested] ? requested : "Coffee Shop";
+try{localStorage.setItem("iwActiveProject",name)}catch(e){}
 document.title=name+" — IdeaWorth";
 document.getElementById("projectEyebrow").textContent=p.cat.toUpperCase()+" · PROJECT BLUEPRINT";
 document.getElementById("projectTitle").innerHTML=name+" <span>Business Project.</span>";
