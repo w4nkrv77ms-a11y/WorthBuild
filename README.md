@@ -1,8 +1,7 @@
-# WorthBuild — Working Buttons
-This package keeps the selected WorthBuild reference design and fixes navigation.
-- Evaluate / Get Started → evaluate.html
-- Build → build.html
-- Login → login.html
-- View Full Report → report.html
-- Learn More / About → index.html#about
-Demo only: authentication, payments, and verified market data are not connected yet.
+WorthBuild Next Step
+
+Adds the intended two-path journey without forcing registration:
+- Help Me Choose / Match
+- Explore Businesses / Choose Yourself
+
+Demo entries are explicitly labeled. This package is the next navigation step and does not claim verified financial data.
