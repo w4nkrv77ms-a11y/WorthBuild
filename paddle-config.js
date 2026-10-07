@@ -1,16 +1,19 @@
 /* IdeaWorth × Paddle Billing configuration
- * Client-side token is safe to expose in frontend code. Never put a Paddle API key here.
- * Replace the placeholders below with values from Paddle > My account > Settings > Authentication
- * and the corresponding one-time price IDs from Paddle Products.
+ * Client-side tokens are intended for frontend use. Never put a Paddle API key here.
  */
 window.IDEAWORTH_PADDLE = {
   token: "REPLACE_WITH_PADDLE_CLIENT_SIDE_TOKEN",
   environment: "live",
-  prices: {
-    100: "REPLACE_WITH_PRICE_ID_100",
-    200: "REPLACE_WITH_PRICE_ID_200",
-    400: "REPLACE_WITH_PRICE_ID_400",
-    800: "REPLACE_WITH_PRICE_ID_800",
-    1600: "REPLACE_WITH_PRICE_ID_1600"
+  prices: {100:"REPLACE_WITH_PRICE_ID_100",200:"REPLACE_WITH_PRICE_ID_200",400:"REPLACE_WITH_PRICE_ID_400",800:"REPLACE_WITH_PRICE_ID_800",1600:"REPLACE_WITH_PRICE_ID_1600"},
+  services: {
+    deep_validation:"REPLACE_WITH_SERVICE_PRICE_ID_DEEP_VALIDATION",
+    market_intelligence:"REPLACE_WITH_SERVICE_PRICE_ID_MARKET_INTELLIGENCE",
+    financial_model:"REPLACE_WITH_SERVICE_PRICE_ID_FINANCIAL_MODEL",
+    launch_plan:"REPLACE_WITH_SERVICE_PRICE_ID_LAUNCH_PLAN",
+    buy_business:"REPLACE_WITH_SERVICE_PRICE_ID_BUY_BUSINESS",
+    business_doctor:"REPLACE_WITH_SERVICE_PRICE_ID_BUSINESS_DOCTOR",
+    growth_scale:"REPLACE_WITH_SERVICE_PRICE_ID_GROWTH_SCALE",
+    equipment_supplier:"REPLACE_WITH_SERVICE_PRICE_ID_EQUIPMENT_SUPPLIER",
+    expansion_analysis:"REPLACE_WITH_SERVICE_PRICE_ID_EXPANSION_ANALYSIS"
   }
 };
