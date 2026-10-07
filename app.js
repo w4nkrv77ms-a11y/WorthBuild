@@ -1,14 +1,53 @@
-document.addEventListener("DOMContentLoaded",function(){
-  // External-page links use normal browser navigation.
-  // Only true in-page anchors are handled as smooth scrolling.
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener("click",function(e){
-      var id=a.getAttribute("href");
-      var el=id && id.length>1 ? document.querySelector(id) : null;
-      if(el){
-        e.preventDefault();
-        el.scrollIntoView({behavior:"smooth",block:"start"});
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Smooth scrolling for real in-page links only
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+      const targetId = this.getAttribute("href");
+
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+
+    });
+
+  });
+
+
+  // Keep external/page navigation normal
+  document.querySelectorAll('a[href$=".html"]').forEach(function (link) {
+
+    link.addEventListener("click", function () {
+      const href = this.getAttribute("href");
+
+      if (href) {
+        window.location.href = href;
       }
     });
+
   });
+
+
+  // Prevent accidental form submission on demo forms
+  document.querySelectorAll("form").forEach(function (form) {
+
+    if (!form.getAttribute("onsubmit")) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+      });
+    }
+
+  });
+
 });
