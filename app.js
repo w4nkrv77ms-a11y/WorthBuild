@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(){
+  // IdeaWorth trust layer: evidence, assumptions and validation status should stay visible in the product experience.
+
   document.documentElement.classList.add("iw-ready");
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
