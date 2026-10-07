@@ -160,7 +160,7 @@ function findProjects() {
     return;
   }
 
-  window.location.href = "explore.html";
+  const params = new URLSearchParams({budget: budget, location: document.getElementById("location").value, experience: document.getElementById("experience").value, goal: document.getElementById("goal").value});  window.location.href = "explore.html?" + params.toString();
 }
 </script>
 
