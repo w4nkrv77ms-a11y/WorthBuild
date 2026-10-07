@@ -6,12 +6,12 @@
 <main class="page"><div class="wrap">
 <div class="panel">
   <h1>Evaluate <span>Your Idea</span></h1>
-  <p>Tell WorthBuild what you want to build. This demo form is the first step toward a full WorthScore analysis.</p>
+  <p>Start with your idea. You can add location and budget now or refine them later in the full evaluation.</p>
   <form onsubmit="event.preventDefault(); document.getElementById('result').hidden=false;">
     <div class="field"><label>Business idea</label><input required placeholder="e.g. Coffee shop, online store, service business"></div>
-    <div class="field"><label>Country</label><input required placeholder="Egypt"></div>
-    <div class="field"><label>Budget</label><input type="number" min="0" required placeholder="10000"></div>
-    <button class="submit" type="submit">Analyze My Idea</button>
+    <div class="field"><label>Country <span style="color:#8495a8;font-weight:400">(optional)</span></label><input placeholder="e.g. Egypt"></div>
+    <div class="field"><label>Budget <span style="color:#8495a8;font-weight:400">(optional)</span></label><input type="number" min="0" placeholder="e.g. 10000"></div>
+    <button class="submit" type="submit">Analyze My Idea →</button>
   </form>
   <div id="result" class="panel" style="margin-top:22px;padding:18px" hidden>
     <h2>WorthScore — Demo</h2>
