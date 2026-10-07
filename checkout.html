@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — WorthBuild</title>
+  <link rel="stylesheet" href="styles.css?v=15">
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">WorthBuild</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="build.html">Build</a>
+  </nav>
+
+  <a class="header-cta" href="login.html">Account</a>
+</header>
+
+
+<main>
+
+<section class="hero" style="min-height:auto;padding-bottom:45px;">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">CHECKOUT</div>
+
+    <h1>
+      Build your business
+      <span>with confidence.</span>
+    </h1>
+
+    <p>
+      Get access to the WorthBuild system designed to take your
+      selected project from evaluation to execution.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section style="padding:20px 6% 90px;">
+
+  <div style="
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+  ">
+
+    <div class="feature-card">
+
+      <div class="eyebrow">YOUR PLAN</div>
+
+      <h2>WorthBuild Project System</h2>
+
+      <p>
+        Everything you need to organize and build your selected
+        business project.
+      </p>
+
+      <div style="
+        font-size:42px;
+        font-weight:800;
+        margin:25px 0;
+      ">
+        $99
+      </div>
+
+      <p style="color:#8f9bab;">
+        One-time demo price
+      </p>
+
+      <div style="margin-top:25px;line-height:2;">
+        ✓ Business Blueprint<br>
+        ✓ Market Research Framework<br>
+        ✓ Startup Checklist<br>
+        ✓ Budget Planning<br>
+        ✓ Launch Roadmap<br>
+        ✓ Project Room
+      </div>
+
+    </div>
+
+
+    <div class="feature-card">
+
+      <div class="eyebrow">ORDER DETAILS</div>
+
+      <h2>Complete your order</h2>
+
+      <form onsubmit="completeOrder(event)">
+
+        <label style="display:block;margin-top:20px;">
+          Full Name
+          <input
+            type="text"
+            required
+            placeholder="Your name"
+          >
+        </label>
+
+
+        <label style="display:block;margin-top:18px;">
+          Email
+          <input
+            type="email"
+            required
+            placeholder="you@example.com"
+          >
+        </label>
+
+
+        <label style="display:block;margin-top:18px;">
+          Payment Method
+          <select required>
+            <option value="">Choose payment method</option>
+            <option>Credit / Debit Card</option>
+            <option>PayPal</option>
+          </select>
+        </label>
+
+
+        <button
+          type="submit"
+          class="primary-btn"
+          style="
+            border:0;
+            cursor:pointer;
+            width:100%;
+            margin-top:25px;
+          "
+        >
+          Continue to Payment →
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <p style="
+    text-align:center;
+    color:#8f9bab;
+    font-size:13px;
+    margin-top:35px;
+  ">
+    DEMO CHECKOUT — No real payment will be processed.
+    Payment integration will be connected before launch.
+  </p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <a class="logo" href="index.html">WorthBuild</a>
+      <p>Smarter decisions. Bigger dreams.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="build.html">Build</a>
+      <a href="login.html">Account</a>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+function completeOrder(event) {
+  event.preventDefault();
+
+  alert(
+    "Demo checkout complete. No payment was processed."
+  );
+
+  window.location.href = "room.html";
+}
+</script>
+
+</body>
+</html>
