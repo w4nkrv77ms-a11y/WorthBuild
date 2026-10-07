@@ -1,4 +1,4 @@
-WorthBuild Next Step
+IdeaWorth Next Step
 
 Adds the intended two-path journey without forcing registration:
 - Help Me Choose / Match
