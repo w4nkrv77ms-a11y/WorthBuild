@@ -22,5 +22,5 @@
 </main>
 <script>
 document.getElementById("logout").onclick=async()=>{await fetch("/api/admin-login",{method:"DELETE"});location.href="/admin.html"};
-(async()=>{const r=await fetch("/api/admin-login",{credentials:"same-origin"});if(!r.ok)location.href="/admin.html?login=1";})();
+(async()=>{const r=await fetch("/api/admin-login",{credentials:"same-origin"});if(!r.ok)location.href="/admin-login.html?login=1";})();
 </script></body></html>
