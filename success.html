@@ -5,15 +5,33 @@
 <header class="topbar"><div class="wrap nav"><a class="logo" href="index.html"><span class="logo-bars"><i></i><i></i><i></i><i></i></span><span><b>IdeaWorth</b><small>Decide Before You Build</small></span></a><nav><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="support.html">Support</a></nav></div></header>
 <main class="page"><div class="wrap"><article class="feature-card" style="max-width:820px;margin:60px auto;text-align:center">
 <div class="eyebrow">PURCHASE COMPLETE</div><h1>Your IdeaWorth project is ready.</h1>
-<p style="color:#9ba8b6;line-height:1.8">Your payment was completed through Paddle. Keep the project name and order email available if you contact support.</p>
+<p id="paymentStatus" style="color:#9ba8b6;line-height:1.8">Checking your Paddle payment securely…</p>
 <div style="margin:30px 0;padding:22px;border:1px solid rgba(57,231,175,.16);border-radius:16px;background:rgba(57,231,175,.04);text-align:left">
 <strong id="projectName">Your selected project</strong><p id="projectNote" style="color:#8f9bab;font-size:13px;line-height:1.7;margin-bottom:0">Your project selection is preserved in this browser.</p>
 </div>
 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="primary-btn" id="roomBtn" href="room.html">Open Project Room →</a><a class="secondary-btn" href="support.html">After-Sales Support</a></div>
-<p style="color:#6f8192;font-size:12px;margin-top:30px">For production fulfillment, access should be provisioned from Paddle transaction/webhook data rather than relying on this public page alone.</p>
+<p id="verificationNote" style="color:#6f8192;font-size:12px;margin-top:30px">Your access is verified against the Paddle transaction before the Project Room is opened.</p>
 </article></div></main>
 <script src="projects.js"></script><script>
-const q=new URLSearchParams(location.search), name=q.get("project")||localStorage.getItem("iwActiveProject")||"";
+const q=new URLSearchParams(location.search), name=q.get("project")||localStorage.getItem("iwActiveProject")||"", tx=q.get("transaction_id")||"";
 document.getElementById("projectName").textContent=name||"IdeaWorth Project";
-document.getElementById("roomBtn").href="room.html?project="+encodeURIComponent(name);
+const roomBtn=document.getElementById("roomBtn"), status=document.getElementById("paymentStatus");
+roomBtn.style.pointerEvents="none";roomBtn.style.opacity=".55";
+async function verify(){
+  if(!tx){status.textContent="We could not find the Paddle transaction reference. Please return to checkout or contact support.";return;}
+  try{
+    const r=await fetch("/api/verify-purchase?transaction_id="+encodeURIComponent(tx),{headers:{"Accept":"application/json"}});
+    const data=await r.json().catch(()=>({}));
+    if(!r.ok||!data.verified)throw new Error(data.error||"verification_failed");
+    const paidProject=data.custom_data&&data.custom_data.project_name;
+    if(paidProject&&name&&paidProject!==name)throw new Error("purchase_mismatch");
+    status.textContent="Payment verified successfully. Your IdeaWorth Project Room is ready.";
+    roomBtn.href="room.html?project="+encodeURIComponent(name)+"&transaction_id="+encodeURIComponent(tx);
+    roomBtn.style.pointerEvents="auto";roomBtn.style.opacity="1";
+  }catch(e){
+    status.textContent=e.message==="purchase_mismatch"?"The purchase does not match this project. Please contact support.":"Payment verification is not available on this hosting environment yet. Please contact support with your Paddle transaction reference.";
+    document.getElementById("verificationNote").textContent="Do not enter payment details again. Your transaction reference is: "+tx;
+  }
+}
+verify();
 </script></body></html>
