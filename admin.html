@@ -10,13 +10,13 @@
 .nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px}.brand span{color:#39e7af}.nav-right{display:flex;gap:8px;align-items:center}.logout,.navbtn{border:1px solid rgba(255,255,255,.11);background:#0b1c2b;color:#c5d0d9;border-radius:10px;padding:10px 13px;cursor:pointer;font:inherit}.main{padding:30px 0 70px}
 .hero{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:1.6px;color:#39e7af;font-weight:850}.hero h1{font-size:40px;line-height:1.05;margin:8px 0}.hero p{color:#8fa0b0;line-height:1.65;margin:0;max-width:690px}.status{white-space:nowrap;padding:11px 14px;border:1px solid rgba(57,231,175,.2);border-radius:12px;color:#9edfc7;background:rgba(57,231,175,.05);font-size:12px}
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,#0a1c2c,#071522);border-radius:17px;padding:19px}.card small{color:#7f8d9b}.num{font-size:28px;font-weight:850;margin:8px 0 4px}.muted{color:#81909f;font-size:12px;line-height:1.55}
-.section{margin-top:20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:11px}.section h2{font-size:22px;margin:0}.section-head p{margin:0;color:#758595;font-size:12px}
+.section{margin-top:20px}.live{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.live .card{min-height:118px}.live .num{font-size:25px}.live-note{margin-top:9px;color:#718293;font-size:11px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:11px}.section h2{font-size:22px;margin:0}.section-head p{margin:0;color:#758595;font-size:12px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.link{padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#091a29}.link b{display:block;margin-bottom:6px}.link span{color:#8292a1;font-size:12px;line-height:1.5}.badge{display:inline-block;padding:5px 8px;border-radius:999px;background:rgba(57,231,175,.1);color:#6ee9c1;font-size:9px;font-weight:850;margin-top:9px}
 .tools{display:flex;gap:9px;flex-wrap:wrap}.tool{padding:10px 13px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:#091a29;color:#b9c7d2;font-size:12px}
 .catalog{border:1px solid rgba(255,255,255,.08);background:#071522;border-radius:17px;overflow:hidden}.filters{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:9px;padding:13px;border-bottom:1px solid rgba(255,255,255,.07)}input,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:#06131f;color:#eef5f9;outline:none}input:focus,select:focus{border-color:rgba(57,231,175,.45)}
 .table{max-height:520px;overflow:auto}.row{display:grid;grid-template-columns:2fr 1fr .7fr .8fr;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06);align-items:center}.row.head{position:sticky;top:0;background:#091b2b;color:#718293;font-size:10px;text-transform:uppercase;letter-spacing:1px}.row:not(.head):hover{background:rgba(255,255,255,.02)}.project{font-weight:750}.sub{color:#718293;font-size:11px;margin-top:3px}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#0b2233;color:#9aabba;font-size:10px}.price{font-weight:800}.score{color:#6ee9c1;font-weight:800}
 .notice{margin-top:12px;padding:14px 16px;border:1px dashed rgba(255,255,255,.12);border-radius:13px;color:#8493a1;font-size:11px;line-height:1.65}.notice b{color:#c9d4dc}
-@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:1fr 1fr}.hero{align-items:flex-start;flex-direction:column}.status{white-space:normal}.row{grid-template-columns:2fr 1fr .7fr}.row .hide-sm{display:none}}
+@media(max-width:900px){.live{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:1fr 1fr}.hero{align-items:flex-start;flex-direction:column}.status{white-space:normal}.row{grid-template-columns:2fr 1fr .7fr}.row .hide-sm{display:none}}
 @media(max-width:560px){.stats{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.hero h1{font-size:32px}.row{grid-template-columns:1.7fr .8fr}.row .hide-xs{display:none}}
 </style>
 </head>
@@ -32,6 +32,15 @@
 <div class="card"><small>Payments</small><div class="num">Paddle</div><div class="muted">Checkout + verification</div></div>
 <div class="card"><small>Analytics</small><div class="num">Vercel</div><div class="muted">Visitor tracking enabled</div></div>
 </section>
+
+<section class="section"><div class="section-head"><div><h2>Live business snapshot</h2><p>Securely pulled from Paddle. Refresh to check for new orders.</p></div></div>
+<div class="live">
+<div class="card"><small>Paid orders</small><div class="num" id="paidOrders">—</div><div class="muted">Paddle transactions</div></div>
+<div class="card"><small>Revenue</small><div class="num" id="revenue">—</div><div class="muted">Completed / paid</div></div>
+<div class="card"><small>Latest order</small><div class="num" id="latestOrder">—</div><div class="muted">Most recent paid transaction</div></div>
+<div class="card"><small>Data status</small><div class="num" id="paddleStatus">Loading</div><div class="muted">Live connection</div></div>
+</div>
+<div class="live-note" id="paddleNote">Loading secure Paddle data…</div></section>
 
 <section class="section"><div class="section-head"><div><h2>Quick access</h2><p>Open the system you need without searching through dashboards.</p></div></div>
 <div class="grid4">
@@ -81,7 +90,7 @@ function render(){
  };document.head.appendChild(s);
 })();
 ["q","cat","price"].forEach(id=>document.getElementById(id).addEventListener("input",render));
-document.getElementById("refresh").onclick=()=>location.reload();
+async function loadPaddle(){try{const r=await fetch("/api/admin-paddle",{credentials:"same-origin"});const d=await r.json();if(!r.ok)throw new Error(d.error||"Unavailable");document.getElementById("paidOrders").textContent=d.transactions;document.getElementById("revenue").textContent="$"+Number(d.revenue_usd||0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});const latest=d.recent?.[0];document.getElementById("latestOrder").textContent=latest?new Date(latest.created_at).toLocaleDateString():"—";document.getElementById("paddleStatus").textContent="Live";document.getElementById("paddleNote").textContent=latest?"Paddle data loaded successfully.":"No paid orders yet — this is normal before the first sale."}catch(e){document.getElementById("paddleStatus").textContent="Waiting";document.getElementById("paddleNote").textContent="Paddle data is not available yet. The site remains fully operational; check again after approval / first transaction."}}document.getElementById("refresh").onclick=()=>location.reload();
 document.getElementById("logout").onclick=async()=>{await fetch("/api/admin-login",{method:"DELETE"});location.href="/admin-login.html"};
 </script>
 </body></html>
