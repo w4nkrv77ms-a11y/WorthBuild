@@ -1,26 +1,86 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>IdeaWorth Admin</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#06111c">
+<title>IdeaWorth · Admin</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#06111c;color:#eef5f9;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 20px}.top{border-bottom:1px solid rgba(255,255,255,.08);background:#071827}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:20px}.brand span{color:#39e7af}.logout{border:1px solid rgba(255,255,255,.12);background:#0b1c2b;color:#b8c4cf;border-radius:10px;padding:10px 15px;cursor:pointer}.main{padding:36px 0 70px}.eyebrow{font-size:11px;letter-spacing:1.5px;color:#39e7af;font-weight:800}.hero{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}.hero h1{font-size:42px;margin:8px 0}.hero p{color:#8fa0b0;line-height:1.7;margin:0}.status{padding:12px 15px;border:1px solid rgba(57,231,175,.2);border-radius:12px;color:#9edfc7;background:rgba(57,231,175,.05);font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,#0a1c2c,#071522);border-radius:18px;padding:22px}.card small{color:#7f8d9b}.num{font-size:32px;font-weight:800;margin:10px 0}.muted{color:#81909f;font-size:12px;line-height:1.6}.section{margin-top:18px}.section h2{font-size:23px;margin:0 0 12px}.links{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.link{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:#091a29}.link b{display:block;margin-bottom:6px}.link span{color:#8292a1;font-size:12px;line-height:1.5}.badge{display:inline-block;padding:5px 8px;border-radius:999px;background:rgba(57,231,175,.1);color:#6ee9c1;font-size:10px;font-weight:800;margin-top:10px}.note{margin-top:18px;padding:18px;border:1px dashed rgba(255,255,255,.12);border-radius:15px;color:#8d9aa8;font-size:12px;line-height:1.7}@media(max-width:850px){.grid,.links{grid-template-columns:1fr 1fr}.hero{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.grid,.links{grid-template-columns:1fr}.hero h1{font-size:34px}}
-</style></head>
-<body><header class="top"><div class="wrap nav"><div class="brand">Idea<span>Worth</span> · Admin</div><button class="logout" id="logout">Log out</button></div></header>
-<main class="wrap main"><section class="hero"><div><div class="eyebrow">PRIVATE CONTROL CENTER</div><h1>Your IdeaWorth command center.</h1><p>One secure place for the health, traffic, sales and search performance of the business.</p></div><div class="status">● Protected admin session</div></section>
-<section class="grid">
-<div class="card"><small>Website</small><div class="num">Online</div><div class="muted">Production site is running on Vercel.</div></div>
-<div class="card"><small>Payments</small><div class="num">Paddle</div><div class="muted">Secure checkout and server-side verification are connected.</div></div>
-<div class="card"><small>Google</small><div class="num">Search</div><div class="muted">Search Console ownership is verified and indexing is being submitted.</div></div>
-<div class="card"><small>Catalog</small><div class="num">120</div><div class="muted">Business projects currently published in the catalogue.</div></div>
+*{box-sizing:border-box}body{margin:0;background:#06111c;color:#eef5f9;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:auto;padding:0 18px}.top{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(6,17,28,.94);backdrop-filter:blur(14px)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px}.brand span{color:#39e7af}.nav-right{display:flex;gap:8px;align-items:center}.logout,.navbtn{border:1px solid rgba(255,255,255,.11);background:#0b1c2b;color:#c5d0d9;border-radius:10px;padding:10px 13px;cursor:pointer;font:inherit}.main{padding:30px 0 70px}
+.hero{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:1.6px;color:#39e7af;font-weight:850}.hero h1{font-size:40px;line-height:1.05;margin:8px 0}.hero p{color:#8fa0b0;line-height:1.65;margin:0;max-width:690px}.status{white-space:nowrap;padding:11px 14px;border:1px solid rgba(57,231,175,.2);border-radius:12px;color:#9edfc7;background:rgba(57,231,175,.05);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,#0a1c2c,#071522);border-radius:17px;padding:19px}.card small{color:#7f8d9b}.num{font-size:28px;font-weight:850;margin:8px 0 4px}.muted{color:#81909f;font-size:12px;line-height:1.55}
+.section{margin-top:20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:11px}.section h2{font-size:22px;margin:0}.section-head p{margin:0;color:#758595;font-size:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.link{padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#091a29}.link b{display:block;margin-bottom:6px}.link span{color:#8292a1;font-size:12px;line-height:1.5}.badge{display:inline-block;padding:5px 8px;border-radius:999px;background:rgba(57,231,175,.1);color:#6ee9c1;font-size:9px;font-weight:850;margin-top:9px}
+.tools{display:flex;gap:9px;flex-wrap:wrap}.tool{padding:10px 13px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:#091a29;color:#b9c7d2;font-size:12px}
+.catalog{border:1px solid rgba(255,255,255,.08);background:#071522;border-radius:17px;overflow:hidden}.filters{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:9px;padding:13px;border-bottom:1px solid rgba(255,255,255,.07)}input,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:#06131f;color:#eef5f9;outline:none}input:focus,select:focus{border-color:rgba(57,231,175,.45)}
+.table{max-height:520px;overflow:auto}.row{display:grid;grid-template-columns:2fr 1fr .7fr .8fr;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06);align-items:center}.row.head{position:sticky;top:0;background:#091b2b;color:#718293;font-size:10px;text-transform:uppercase;letter-spacing:1px}.row:not(.head):hover{background:rgba(255,255,255,.02)}.project{font-weight:750}.sub{color:#718293;font-size:11px;margin-top:3px}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#0b2233;color:#9aabba;font-size:10px}.price{font-weight:800}.score{color:#6ee9c1;font-weight:800}
+.notice{margin-top:12px;padding:14px 16px;border:1px dashed rgba(255,255,255,.12);border-radius:13px;color:#8493a1;font-size:11px;line-height:1.65}.notice b{color:#c9d4dc}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:1fr 1fr}.hero{align-items:flex-start;flex-direction:column}.status{white-space:normal}.row{grid-template-columns:2fr 1fr .7fr}.row .hide-sm{display:none}}
+@media(max-width:560px){.stats{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.hero h1{font-size:32px}.row{grid-template-columns:1.7fr .8fr}.row .hide-xs{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><div class="brand">Idea<span>Worth</span> · Admin</div><div class="nav-right"><button class="navbtn" id="refresh">Refresh</button><button class="logout" id="logout">Log out</button></div></div></header>
+<main class="wrap main">
+<section class="hero"><div><div class="eyebrow">PRIVATE CONTROL CENTER</div><h1>IdeaWorth command center.</h1><p>Manage the business from one place: catalog, services, operations and the systems that power the live site.</p></div><div class="status">● Protected admin session</div></section>
+
+<section class="stats">
+<div class="card"><small>Website</small><div class="num">Online</div><div class="muted">Vercel Production</div></div>
+<div class="card"><small>Projects</small><div class="num" id="projectCount">120</div><div class="muted">Published catalogue</div></div>
+<div class="card"><small>Services</small><div class="num">9</div><div class="muted">Paid decision services</div></div>
+<div class="card"><small>Payments</small><div class="num">Paddle</div><div class="muted">Checkout + verification</div></div>
+<div class="card"><small>Search</small><div class="num">Google</div><div class="muted">Search Console connected</div></div>
 </section>
-<section class="section"><h2>Open a system</h2><div class="links">
-<a class="link" href="https://vercel.com/dashboard" target="_blank"><b>Vercel</b><span>Deployments, errors, hosting and Web Analytics.</span><em class="badge">OPERATIONS</em></a>
-<a class="link" href="https://search.google.com/search-console" target="_blank"><b>Google Search Console</b><span>Google impressions, clicks, queries and indexing.</span><em class="badge">SEARCH</em></a>
-<a class="link" href="https://vendors.paddle.com/" target="_blank"><b>Paddle</b><span>Transactions, products, refunds and payouts.</span><em class="badge">SALES</em></a>
+
+<section class="section"><div class="section-head"><div><h2>Quick access</h2><p>Open the system you need without searching through dashboards.</p></div></div>
+<div class="grid4">
+<a class="link" href="https://vercel.com/dashboard" target="_blank"><b>Vercel</b><span>Deployments, errors, domains and analytics.</span><em class="badge">OPERATIONS</em></a>
+<a class="link" href="https://search.google.com/search-console" target="_blank"><b>Google Search Console</b><span>Clicks, impressions, queries and indexing.</span><em class="badge">SEARCH</em></a>
+<a class="link" href="https://vendors.paddle.com/" target="_blank"><b>Paddle</b><span>Orders, refunds, products and payouts.</span><em class="badge">SALES</em></a>
 <a class="link" href="https://worthbuild.vercel.app/" target="_blank"><b>Live Website</b><span>Open the customer-facing IdeaWorth site.</span><em class="badge">SITE</em></a>
 </div></section>
-<section class="section card"><h2>Next upgrade</h2><p class="muted">The secure shell is ready. The next layer can pull the actual Vercel visitor data and Paddle order totals into these cards, so you do not need to open the other dashboards for routine monitoring. Vercel's Web Analytics API supports page views, visitors and grouped traffic data for custom admin panels.</p></section>
-<div class="note">Security: this page is noindex and requires a server-side admin password. Your Paddle API key and webhook secret are never placed in this page.</div>
+
+<section class="section"><div class="section-head"><div><h2>Catalogue manager</h2><p>Search and review every published project from your phone.</p></div></div>
+<div class="catalog"><div class="filters"><input id="q" placeholder="Search projects…"><select id="cat"><option value="">All categories</option></select><select id="price"><option value="">All prices</option><option value="100">$100</option><option value="200">$200</option><option value="400">$400</option><option value="800">$800</option><option value="1600">$1,600</option></select></div>
+<div class="table" id="table"><div class="row head"><div>Project</div><div>Category</div><div>Price</div><div>Score</div></div></div></div>
+<div class="notice"><b>Editing:</b> this first admin upgrade is a secure catalogue manager for searching and reviewing projects. Actual content changes remain controlled through the source repository so a bad tap cannot accidentally change the live catalogue. When you want to change a project, tell me the project name and the new details and I can update the source safely.</div>
+</section>
+
+<section class="section"><div class="section-head"><div><h2>Common tasks</h2><p>Shortcuts for the work you will do most often.</p></div></div>
+<div class="tools">
+<a class="tool" href="explore.html" target="_blank">Preview catalogue</a>
+<a class="tool" href="services.html" target="_blank">Preview services</a>
+<a class="tool" href="index.html" target="_blank">Preview homepage</a>
+<a class="tool" href="support.html" target="_blank">Support page</a>
+<a class="tool" href="https://vercel.com/mfjsykgghr-1838/worthbuild/settings/environment-variables" target="_blank">Environment variables</a>
+</div></section>
+
+<div class="notice">Security: this page is noindex and requires the server-side admin session. Sensitive Paddle credentials are never displayed here.</div>
 </main>
 <script>
-document.getElementById("logout").onclick=async()=>{await fetch("/api/admin-login",{method:"DELETE"});location.href="/admin.html"};
-(async()=>{const r=await fetch("/api/admin-login",{credentials:"same-origin"});if(!r.ok)location.href="/admin-login.html?login=1";})();
-</script></body></html>
+async function auth(){
+ const r=await fetch("/api/admin-login",{credentials:"same-origin"});
+ if(!r.ok){location.href="/admin-login.html?login=1";return false} return true;
+}
+let projects=[];
+function render(){
+ const q=document.getElementById("q").value.toLowerCase().trim(), cat=document.getElementById("cat").value, price=document.getElementById("price").value;
+ const rows=projects.filter(([name,p])=>(!q||name.toLowerCase().includes(q)||String(p.intro||"").toLowerCase().includes(q))&&(!cat||p.cat===cat)&&(!price||String(p.price)===price));
+ const table=document.getElementById("table");
+ table.innerHTML='<div class="row head"><div>Project</div><div>Category</div><div>Price</div><div>Score</div></div>'+rows.map(([name,p])=>'<div class="row"><div><div class="project">'+name.replace(/</g,"&lt;")+'</div><div class="sub">'+String(p.market||"United States")+'</div></div><div class="hide-sm"><span class="pill">'+String(p.cat||"—").replace(/</g,"&lt;")+'</span></div><div class="price">$'+Number(p.price||0).toLocaleString()+'</div><div class="score">'+String(p.score||"—")+'/100</div></div>').join("")+(rows.length?'':'<div style="padding:24px;color:#81909f;font-size:12px">No projects match your filters.</div>');
+}
+(async()=>{
+ if(!await auth())return;
+ const s=document.createElement("script");s.src="/projects.js";s.onload=()=>{
+   const obj=window.IDEAWORTH_PROJECTS||{};projects=Object.entries(obj);
+   document.getElementById("projectCount").textContent=projects.length;
+   [...new Set(projects.map(x=>x[1].cat).filter(Boolean))].sort().forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;document.getElementById("cat").appendChild(o)});
+   render();
+ };document.head.appendChild(s);
+})();
+["q","cat","price"].forEach(id=>document.getElementById(id).addEventListener("input",render));
+document.getElementById("refresh").onclick=()=>location.reload();
+document.getElementById("logout").onclick=async()=>{await fetch("/api/admin-login",{method:"DELETE"});location.href="/admin-login.html"};
+</script>
+</body></html>
