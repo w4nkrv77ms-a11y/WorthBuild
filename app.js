@@ -1,3 +1,5 @@
+(function(){var s=document.createElement("script");s.defer=true;s.src="/_vercel/insights/script.js";document.head.appendChild(s);})();
+
 document.addEventListener("DOMContentLoaded",function(){
   // IdeaWorth trust layer: evidence, assumptions and validation status should stay visible in the product experience.
 
